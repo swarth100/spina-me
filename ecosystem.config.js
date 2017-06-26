@@ -4,7 +4,7 @@ module.exports = {
     script: './server.js'
   }],
   deploy: {
-    production: {
+    dev: {
       user: 'ubuntu',
       host: 'spina.me',
       key: '~/Documents/AWS/spina.pem',
