@@ -30,16 +30,14 @@
        JQuery embedded into Components -->
   <script>
     $(document).ready(function() {
+      $('.parallax').parallax();
       $('.pushpin-demo-nav').each(function (index) {
         const $this = $(this);
         const $target = $('#' + $(this).attr('data-target'));
-        console.log(index);
-        console.log($this);
         $this.pushpin({
           top: $target.offset().top,
-          bottom: $target.offset().top + $target.outerHeight() - $this.height()
+          bottom: $target.offset().top + $target.outerHeight() + parseInt($('.parallax-container-div').css('height')) - $this.height()
         });
-        console.log('bobby');
       });
     })
   </script>
