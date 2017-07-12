@@ -13,6 +13,25 @@ html, body, .block {
   position: relative;
 }
 
+.background-block {
+  color: $background-color;
+}
+
+.dark-nav {
+  background-color: $dark-pastel-yellow;
+}
+
+.light-nav {
+  background-color: $light-pastel-yellow;
+}
+
+.dark-text {
+  color: $dark-text-color !important;
+}
+
+.light-text {
+  color: $light-text-color !important;
+}
 
 .parallax-container-full {
   height: 100%;
