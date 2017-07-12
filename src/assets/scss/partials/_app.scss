@@ -4,6 +4,10 @@
   color: $search-field-text;
 }
 
+html, body {
+  //overflow-x: hidden;
+}
+
 html, body, .block {
   height: 100%;
   position: relative;
@@ -23,15 +27,34 @@ html, body, .block {
 }
 
 .pushpin-demo-nav-left {
-  width: 50%;
   position: absolute;
   left: 0;
 }
 
 .pushpin-demo-nav-right {
   width: 50%;
-  position: absolute;
+  position: fixed;
   right: 0;
+  z-index: 10;
+  transform: translateX(100%);
+}
+
+.slide-in-right{
+  animation: slide-in-right 1s forwards;
+}
+
+.slide-out-right {
+  animation: slide-out-right 1s forwards;
+}
+
+@keyframes slide-in-right {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes slide-out-right {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
 }
 
 
