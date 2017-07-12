@@ -31,7 +31,7 @@
   <script>
     $(document).ready(function() {
       $('.parallax').parallax();
-      $('.pushpin-demo-nav').each(function (index) {
+      $('.pushpin-demo-nav-left').each(function (index) {
         const $this = $(this);
         const $target = $('#' + $(this).attr('data-target'));
         $this.pushpin({
@@ -39,7 +39,28 @@
           bottom: $target.offset().top + $target.outerHeight() + parseInt($('.parallax-container-div').css('height')) - $this.height()
         });
       });
-    })
+      $('.pushpin-demo-nav-right').each(function (index) {
+        const $this = $(this);
+        const $target = $('#' + $(this).attr('data-target'));
+        $this.pushpin({
+          top: $target.offset().top,
+          bottom: Infinity,
+        });
+      });
+    });
+
+    $(document).ready(function($) {
+      $(window).scroll(function() {
+        let scroll = $(window).scrollTop();
+
+        if (scroll >= $(window).height()) {
+          $("#info-side-nav").addClass("slide-in-right").removeClass("slide-out-right");
+        } else {
+          $("#info-side-nav").removeClass("slide-in-right").addClass("slide-out-right");
+        }
+      });
+    });
+
   </script>
 </body>
 </html>
