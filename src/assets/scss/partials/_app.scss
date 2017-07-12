@@ -6,6 +6,7 @@
 
 html, body, .block {
   height: 100%;
+  position: relative;
 }
 
 
@@ -19,6 +20,18 @@ html, body, .block {
 
 .parallax {
   height: 100%;
+}
+
+.pushpin-demo-nav-left {
+  width: 50%;
+  position: absolute;
+  left: 0;
+}
+
+.pushpin-demo-nav-right {
+  width: 50%;
+  position: absolute;
+  right: 0;
 }
 
 
