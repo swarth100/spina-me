@@ -28,39 +28,6 @@
 
   <!-- I give up. 24h of debugging. I had to place it into a script tag. The 'angular' way doesn't seem to like
        JQuery embedded into Components -->
-  <script>
-    $(document).ready(function() {
-      $('.parallax').parallax();
-      $('.pushpin-demo-nav-left').each(function (index) {
-        const $this = $(this);
-        const $target = $('#' + $(this).attr('data-target'));
-        $this.pushpin({
-          top: $target.offset().top,
-          bottom: $target.offset().top + $target.outerHeight() + parseInt($('.parallax-container-div').css('height')) - $this.height()
-        });
-      });
-      $('.pushpin-demo-nav-right').each(function (index) {
-        const $this = $(this);
-        const $target = $('#' + $(this).attr('data-target'));
-        $this.pushpin({
-          top: $target.offset().top,
-          bottom: Infinity,
-        });
-      });
-    });
-
-    $(document).ready(function($) {
-      $(window).scroll(function() {
-        let scroll = $(window).scrollTop();
-
-        if (scroll >= $(window).height()) {
-          $("#info-side-nav").addClass("slide-in-right").removeClass("slide-out-right");
-        } else {
-          $("#info-side-nav").removeClass("slide-in-right").addClass("slide-out-right");
-        }
-      });
-    });
-
-  </script>
+  <script src="/assets/js/script.js"></script>
 </body>
 </html>
