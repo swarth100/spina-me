@@ -1,9 +1,5 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
-
-.component {
-  color: $search-field-text;
-}
-
+/* BLOCK */
 html, body, .block {
   height: 100%;
   position: relative;
@@ -13,21 +9,8 @@ html, body, .block {
   background-color: $background-color;
 }
 
-.dark-nav {
-  background-color: $dark-pastel-yellow;
-}
-
-.light-nav {
-  background-color: $light-pastel-yellow;
-}
-
-.dark-text {
-  color: $dark-text-color !important;
-}
-
-.light-text {
-  color: $light-text-color !important;
-}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* PARALLAX */
 
 .parallax-container-full {
   height: 100%;
@@ -40,6 +23,37 @@ html, body, .block {
 .parallax {
   height: 100%;
 }
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* NAV BAR */
+
+.dark-nav {
+  background-color: $dark-pastel-yellow;
+}
+
+.light-nav {
+  background-color: $light-pastel-yellow;
+}
+
+.centre-align {
+  width: 50%;
+  left: 0;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* NAV TEXT COLORS */
+
+.dark-text {
+  color: $dark-text-color !important;
+}
+
+.light-text {
+  color: $light-text-color !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* NAV PUSHPIN RIGHT ELEMENT */
 
 .pushpin-demo-nav-left {
   position: absolute;
@@ -59,6 +73,9 @@ html, body, .block {
   transform: translateX(100%);
 }
 
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* NAV PUSHPIN ANIMATIONS */
+
 .slide-in-right{
   animation: slide-in-right 1s forwards;
 }
@@ -77,5 +94,16 @@ html, body, .block {
   100% { transform: translateX(100%); }
 }
 
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* CONTAINER */
+
+.container {
+  text-align: center;
+}
+
+.container ul {
+  display: inline-block;
+  text-align: initial;
+}
 
 /* ------------------------------------------------------------------------------------------------------------------ */
