@@ -29,5 +29,22 @@
   <!-- I give up. 24h of debugging. I had to place it into a script tag. The 'angular' way doesn't seem to like
        JQuery embedded into Components -->
   <script src="/assets/js/script.js"></script>
+<script>
+  $.fn.moveIt = function(){
+    var $window = $(window);
+    var instances = [];
+
+    $(this).each(function(){
+      instances.push(new moveItItem($(this)));
+    });
+
+    window.onscroll = function(){
+      var scrollTop = $window.scrollTop();
+      instances.forEach(function(inst){
+        inst.update(scrollTop);
+      });
+    }
+  };
+</script>
 </body>
 </html>
