@@ -1,0 +1,37 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* HOME */
+
+.home-image {
+  max-height: 120%;
+  object-fit: cover;
+}
+
+.home-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.3;
+  background-color: black;
+}
+
+.home-text, .home-text-small {
+  position: absolute;
+  top: 70%;  /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+
+  transform: translate(-50%, -70%); /* This is a shorthand of translateX(-50%) and translateY(-50%) */
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  font-weight: 200;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
+.home-text-small {
+  font-size: 2rem;
+  padding-top: 180px;
+  border-bottom: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
