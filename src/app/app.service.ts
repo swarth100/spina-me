@@ -5,27 +5,18 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class AppService {
 
-  handleError: any;
-
-  private headers = new Headers({'Content-Type': 'application/json'});
-
   constructor(private http: Http) {
   }
 
-  postAPI() {
-    const body = 'username=myusername&password=mypassword';
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+  postLogin(body) {
 
     this.http
       .post('/api/login',
-        body, {
-          headers: headers
-        })
+        body)
       .subscribe(data => {
-        alert('ok');
+        console.log(data);
       }, error => {
-        console.log(JSON.stringify(error.json()));
+        /* Handle login error */
       });
   }
 }
