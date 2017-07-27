@@ -1,3 +1,22 @@
-<p>
-  login works!
-</p>
+<div class="login-page">
+  <div class="row login-component">
+    <form class="col s4 offset-s4 login-component-fill">
+      <div class="login-header">
+        LOGIN
+      </div>
+      <div class="input-field">
+        <input id="username" type="text" class="validate">
+        <label for="username">Username</label>
+      </div>
+      <div class="input-field">
+        <input id="password" type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
+      <button class="btn waves-effect waves-light submit-button" type="submit" onclick="return false" (click)="submit()">
+        Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+</div>
+
