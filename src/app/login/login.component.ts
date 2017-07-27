@@ -9,24 +9,20 @@ import {AppService} from 'app/app.service';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private appService : AppService) { }
+  username: any;
+  password: any;
+
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
   }
 
   public submit() {
     console.log('Got submit');
-    this.appService.postAPI();
+    this.appService.postLogin({
+      'username': this.username,
+      'password': this.password,
+    });
   }
-
-  /*
-  public submit() {
-    console.log('Got submit');
-    this.http
-      .post('/api/login', {})
-      .subscribe(data => {
-        console.log(data['results']);
-      });
-  }; */
 
 }
