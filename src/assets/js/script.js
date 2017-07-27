@@ -42,6 +42,13 @@ $(document).ready(function($) {
   });
 });
 
+/* Courtesy of:
+ * https://codepen.io/nickcil/pen/sfutl */
+
+$(window).scroll(function(){
+  $(".home-overlay").css("opacity", 0.3 + $(window).scrollTop() / ($(window).height()*2));
+});
+
 /* The following code is courtesy of:
  * https://stackoverflow.com/questions/34177626/how-to-change-the-scroll-speed-of-a-div */
 
@@ -63,11 +70,12 @@ $.fn.moveIt = function(){
 
 var moveItItem = function(el){
   this.el = $(el);
-  this.speed = parseInt(this.el.attr('data-scroll-speed'));
+  this.speed = parseFloat(this.el.attr('data-scroll-speed'));
 };
 
 moveItItem.prototype.update = function(scrollTop){
   var pos = scrollTop / this.speed;
+  console.log(this.speed);
   this.el.css('transform', 'translateY(' + -pos + 'px)');
 };
 
