@@ -60,6 +60,7 @@ html, body, .block {
 .pushpin-demo-nav-left {
   position: absolute;
   left: 0;
+  z-index: 10;
 }
 
 .overflow-hidden {
@@ -69,10 +70,9 @@ html, body, .block {
 
 .pushpin-demo-nav-right {
   width: 50%;
-  position: relative;
-  left: 50%;
+  position: absolute;
+  left: 100%;
   z-index: 10;
-  transform: translateX(100%);
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -87,13 +87,13 @@ html, body, .block {
 }
 
 @keyframes slide-in-right {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(0%); }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
 
 @keyframes slide-out-right {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(100%); }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
