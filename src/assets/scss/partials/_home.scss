@@ -14,6 +14,14 @@
   background-color: black;
 }
 
+.home-text-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
 .home-text, .home-text-small {
   position: absolute;
   top: 70%;  /* position the top  edge of the element at the middle of the parent */
@@ -25,13 +33,13 @@
   color: white;
   font-weight: 200;
   padding-bottom: 10px;
-  border-bottom: 1px solid white;
 }
 
 .home-text-small {
   font-size: 2rem;
-  padding-top: 180px;
+  margin-top: 50px;
   border-bottom: none;
+  border-top: 1px solid white;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
