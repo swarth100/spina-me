@@ -37,7 +37,7 @@ html, body {
 /* PARALLAX */
 
 .parallax-container-full {
-  height: 100%;
+  height: 100vh;
 }
 
 .parallax-div {
@@ -80,6 +80,10 @@ html, body {
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* NAV PUSHPIN RIGHT ELEMENT */
+
+.nav {
+  background-color: transparent;
+}
 
 .pushpin-demo-nav-left {
   position: absolute;
