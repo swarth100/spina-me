@@ -1,5 +1,6 @@
 /* jQuery component initialisation */
-$(document).ready(function() {
+
+const initialiseComponents = function() {
   /* Initialise parallax Materialize component */
   $('.parallax').parallax();
 
@@ -26,10 +27,8 @@ $(document).ready(function() {
       bottom: Infinity,
     });
   });
-});
 
-/* Handle scrolling animations for right-nav push-pin component */
-$(document).ready(function($) {
+  /* Handle scrolling animations for right-nav push-pin component */
   $(window).scroll(function() {
     let scroll = $(window).scrollTop();
 
@@ -40,7 +39,11 @@ $(document).ready(function($) {
       $("#info-side-nav").removeClass("slide-in-right").addClass("slide-out-right");
     }
   });
-});
+};
+
+$(document).ready(initialiseComponents);
+
+$(window).on('resize', initialiseComponents);
 
 /* Courtesy of:
  * https://codepen.io/nickcil/pen/sfutl */
