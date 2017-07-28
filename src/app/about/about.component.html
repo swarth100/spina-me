@@ -26,7 +26,7 @@
         Story
       </div>
       <div class="container-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in suscipit sem. Duis et leo velit. Nullam egestas et ipsum sed sagittis. Suspendisse lacus ipsum, mollis sed metus sed, finibus accumsan lectus. Vivamus tristique, arcu in dignissim luctus, velit tellus varius tortor, vel semper urna tellus vitae sem. Nam vel lectus velit. Aliquam id pulvinar mi, vel pharetra libero. Cras condimentum ipsum sed libero efficitur, et laoreet libero consequat. Pellentesque sagittis, leo a fermentum euismod, mauris mi maximus quam, in tincidunt leo orci in neque. Proin maximus eros sapien, vestibulum venenatis lacus tincidunt ut. Nunc posuere purus a nibh posuere, at semper orci suscipit.
+        {{story}}
       </div>
     </div>
     <div class="col s4">
@@ -40,23 +40,11 @@
       <div class="container-text-title">
         Details
       </div>
-      <div class="container-text">
+      <div class="container-text no-margin-important" *ngFor="let detail of details">
         <div class="container-text-highlight">
-          Name:
+          {{detail.title}}
         </div>
-          Alberto Spina
-        <div class="container-text-highlight">
-          Age:
-        </div>
-        20 years old
-        <div class="container-text-highlight">
-          Current Employment:
-        </div>
-        Student, Imperial College London
-        <div class="container-text-highlight">
-          Location:
-        </div>
-        London, United Kingdom
+        {{detail.content}}
       </div>
     </div>
   </div>
