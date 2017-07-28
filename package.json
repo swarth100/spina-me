@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "dev": "concurrently --kill-others \"nodemon server\" \"npm run build-watch\" \"npm run watch-sass\"",
-    "build": "ng build && ./node_modules/node-sass/bin/node-sass ./src/assets/scss/styles.scss -o ./src",
+    "build": "./node_modules/node-sass/bin/node-sass ./src/assets/scss/styles.scss -o ./src && ng build",
     "build-watch": "ng build --watch --progress=false",
     "watch-sass": "./node_modules/node-sass/bin/node-sass --watch ./src/assets/scss/styles.scss -o ./src",
     "test": "ng test",
