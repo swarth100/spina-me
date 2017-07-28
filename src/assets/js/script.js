@@ -75,7 +75,6 @@ var moveItItem = function(el){
 
 moveItItem.prototype.update = function(scrollTop){
   var pos = scrollTop / this.speed;
-  console.log(this.speed);
   this.el.css('transform', 'translateY(' + -pos + 'px)');
 };
 
