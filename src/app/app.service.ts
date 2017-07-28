@@ -8,15 +8,16 @@ export class AppService {
   constructor(private http: Http) {
   }
 
+  /*
   postLogin(body) {
-
     this.http
       .post('/api/login',
         body)
       .subscribe(data => {
         console.log(data);
+        return data.text();
       }, error => {
-        /* Handle login error */
       });
   }
+  */
 }
