@@ -15,7 +15,7 @@ let uniqueValidator = require('mongoose-unique-validator');
 /* Connect to mongoDB users database */
 
 let Schema = mongoose.Schema;
-let userDBName = '/users';
+let userDBName = '/spina-me/users';
 mongoose.Promise = global.Promise;
 let userDB = mongoose.createConnection(dbConfig + userDBName);
 
@@ -25,40 +25,26 @@ let userDB = mongoose.createConnection(dbConfig + userDBName);
 
 userDB.on('error', console.error.bind(console, 'Cannot connect to userDB:'));
 userDB.once('open', function() {
-    console.log('Users DB Active');
+    // console.log('[DB ACTIVE]: /spina-me/users');
 });
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 
 /* Setters for the fields */
 
-function toLower(v) {
-    return v.toLowerCase();
-}
-
 let userSchema = new Schema({
-    name: {
+    hash: {
         type: String,
-        required: true,
     },
     username: {
         type: String,
         unique: true,
         required: true,
     },
-    email: {
-        type: String,
-        set: toLower,
-    },
     password: {
         type: String,
         required: true,
     },
-    time: {
-        type: Date,
-    },
-    friends: [{type: Schema.ObjectId, ref: 'User'}],
-    friendRequests: [{type: Schema.ObjectId, ref: 'User'}],
 });
 
 /* Plugin that validates unique entries */
@@ -80,8 +66,6 @@ userSchema.methods.debugPrinting = function() {
  * Used to initialise fields upon saving
  * */
 userSchema.pre('save', function(next) {
-    this.time = Date.now();
-
     // TODO: Handle checks before invoking next
     // Next can be invoked with an error to make it cascade through
     // i.e. new Error('something went wrong')
@@ -99,10 +83,8 @@ let User = userDB.model('User', userSchema);
 *   p = password
 * Returns:
 *   new User instance */
-exports.createNewUser = function(n, e, p, u) {
+exports.createNewUser = function(u, p) {
     return new User({
-        name: n,
-        email: e,
         password: p,
         username: u,
     });
