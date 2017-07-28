@@ -6,7 +6,7 @@
       </div>
     </div>
   </nav>
-  <div class="overflow-hidden">
+  <nav class="overflow-hidden">
     <nav id="info-side-nav" class="pushpin-demo-nav pushpin-demo-nav-right z-depth-0 hide-on-med-and-down" data-target="about">
       <div class="nav-wrapper light-nav">
         <div class="container">
@@ -19,6 +19,34 @@
         </div>
       </div>
     </nav>
+  </nav>
+  <div class="row no-margin">
+    <div class="col s3 offset-s1">
+      <div class="container-text-title">
+        Story
+      </div>
+      <div class="container-text">
+        {{story}}
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="box">
+        <div class="crop">
+          <img src="../../assets/images/about.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="col s3">
+      <div class="container-text-title">
+        Details
+      </div>
+      <div class="container-text no-margin-important" *ngFor="let detail of details">
+        <div class="container-text-highlight">
+          {{detail.title}}
+        </div>
+        {{detail.content}}
+      </div>
+    </div>
   </div>
 </div>
 

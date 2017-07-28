@@ -1,7 +1,27 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
+/* GENERAL */
+
+.no-margin {
+  margin: 0;
+}
+
+.no-margin-important {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
 /* BLOCK */
-html, body, .block {
+html, body {
   height: 100%;
+  position: relative;
+}
+
+.block {
+  height: auto;
   position: relative;
 }
 
@@ -60,19 +80,19 @@ html, body, .block {
 .pushpin-demo-nav-left {
   position: absolute;
   left: 0;
+  z-index: 10;
 }
 
 .overflow-hidden {
-  overflow-x: hidden;
-  overflow-y: visible;
+  position: relative;
+  overflow: hidden;
 }
 
 .pushpin-demo-nav-right {
   width: 50%;
-  position: relative;
-  left: 50%;
-  z-index: 10;
-  transform: translateX(100%);
+  position: absolute;
+  left: 100%;
+  z-index: 15;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -87,13 +107,13 @@ html, body, .block {
 }
 
 @keyframes slide-in-right {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(0%); }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
 
 @keyframes slide-out-right {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(100%); }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -106,6 +126,30 @@ html, body, .block {
 .container ul {
   display: inline-block;
   text-align: initial;
+}
+
+.container-text-title {
+  width: 100%;
+  margin-top: 30px;
+  font-size: 2rem;
+  color: $dark-text-color;
+  font-weight: 200;
+  text-align: center;
+}
+
+.container-text {
+  width: 100%;
+  font-size: 1rem;
+  color: $dark-brown-text-color;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container-text-highlight {
+  margin-top: 10px;
+  font-weight: 400;
+  color: $dark-text-color;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
