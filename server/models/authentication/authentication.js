@@ -95,7 +95,7 @@ exports.setup = (app, callback) => {
 
 exports.addUserToDb = (req, res) => {
     bcyrpt.hash(req.body.password, saltRounds, (err, hash) => {
-        let user = userDB.createNewUser(req.body.name, req.body.email, hash, req.body.username);
+        let user = userDB.createNewUser(req.body.username, hash);
         let savePromise = userDB.saveUser(user);
         savePromise
             .then(function(user) {
@@ -115,9 +115,6 @@ exports.failToValidateUser = (errors, req, res) => {
 /* Checks the registration fields
  */
 exports.checkRegisterFields = (req, res, successCallback, failCallback) => {
-    req.checkBody('name', 'name is required').notEmpty();
-    req.checkBody('email', 'email is required').notEmpty();
-    req.checkBody('email', 'email is not valid').isEmail();
     req.checkBody('username', 'username is required').notEmpty();
     req.checkBody('username', 'username is not unique').isUnique();
     req.checkBody('password', 'password is required').notEmpty();
