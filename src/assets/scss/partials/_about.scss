@@ -1,13 +1,16 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* ABOUT */
 
+.img-padding {
+  margin-top: 70px;
+}
+
 .box{
   position: relative;
   width: 100%;       /* desired width */
   max-width: 250px;
   max-height: 250px;
   margin: auto;
-  margin-top: 70px;
 }
 
 .box:before{
