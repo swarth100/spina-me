@@ -135,6 +135,19 @@ exports.removeMultiple = function(p) {
     return helper.removeMultipleHelper(User, p);
 };
 
+/* */
+exports.updateHash = function(user, hash) {
+  let query = {
+    'hash': hash,
+  };
+
+  let cond = {
+    'username': user.username,
+  };
+
+  return helper.updateHelper(User, cond, query);
+};
+
 /* Export the User model *
 exports.userModel = User;
 */
