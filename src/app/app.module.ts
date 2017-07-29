@@ -13,6 +13,7 @@ import { ErrorComponent } from './error/error.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import {AppService} from 'app/app.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {AppService} from 'app/app.service';
     ContactComponent,
     LoginComponent,
     ErrorComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
