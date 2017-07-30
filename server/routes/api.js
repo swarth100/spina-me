@@ -64,7 +64,7 @@ router.get('/projects/:hash', function(req, res) {
     })
     .catch(function(err) {
       console.log('No element in the database meets the search criteria');
-      res.send({});
+      res.send([]);
     });
 });
 
