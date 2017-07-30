@@ -8,6 +8,7 @@ import {Http} from '@angular/http';
 export class DashboardComponent implements OnInit {
   hash: any;
   projects: any;
+  selectedPrj: any;
 
   constructor(private http: Http) { }
 
@@ -27,6 +28,11 @@ export class DashboardComponent implements OnInit {
       }, error => {
         /* Handle login error */
       });
+  }
+
+  public select(prj) {
+    console.log('Got button select click');
+    this.selectedPrj = prj;
   }
 
 }
