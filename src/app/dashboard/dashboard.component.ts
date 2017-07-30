@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
 
+declare let Materialize: any;
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -21,10 +23,10 @@ export class DashboardComponent implements OnInit {
 
   retrieveProjects() {
     this.http
-      .get('/api/projects/' + this.hash)
+      .get('/api/projects')
       .subscribe(data => {
         const retdata = JSON.parse(data.text());
-        console.log(retdata);
+        // console.log(retdata);
         this.projects = retdata;
       }, error => {
         /* Handle login error */
@@ -33,21 +35,38 @@ export class DashboardComponent implements OnInit {
 
   public select(prj) {
     this.selectedPrj = prj;
+    Materialize.updateTextFields();
   }
 
   public newPrj() {
     this.selectedPrj = {};
+    Materialize.updateTextFields();
   }
 
   public updatePrj() {
-    this.http
-      .post('/api/updateProjects', this.selectedPrj)
-      .subscribe(data => {
-        const retdata = JSON.parse(data.text());
-        this.retrieveProjects();
-      }, error => {
-        /* Handle login error */
-      });
+    if (this.selectedPrj.title) {
+      this.http
+        .post('/api/updateProjects/' + this.hash, this.selectedPrj)
+        .subscribe(data => {
+          const retdata = JSON.parse(data.text());
+          this.retrieveProjects();
+        }, error => {
+          /* Handle login error */
+        });
+    }
+  }
+
+  public removePrj() {
+    if (this.selectedPrj.title) {
+      this.http
+        .post('/api/removeProjects/' + this.hash, this.selectedPrj)
+        .subscribe(data => {
+          const retdata = JSON.parse(data.text());
+          this.retrieveProjects();
+        }, error => {
+          /* Handle login error */
+        });
+    }
   }
 
 }
