@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
       .post('/api/login',
         body)
       .subscribe(data => {
-        console.log(data);
         const retdata = JSON.parse(data.text());
         console.log(retdata);
         this.username = retdata.username;
