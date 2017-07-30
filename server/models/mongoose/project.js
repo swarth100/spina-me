@@ -15,16 +15,16 @@ let uniqueValidator = require('mongoose-unique-validator');
 /* Connect to mongoDB users database */
 
 let Schema = mongoose.Schema;
-let userDBName = '/spina-me/users';
+let projectDBName = '/spina-me/projects';
 mongoose.Promise = global.Promise;
-let userDB = mongoose.createConnection(dbConfig + userDBName);
+let projectDB = mongoose.createConnection(dbConfig + projectDBName);
 
 // TODO: Add validation
 
 /* Handling connection errors */
 
-userDB.on('error', console.error.bind(console, 'Cannot connect to userDB:'));
-userDB.once('open', function() {
+projectDB.on('error', console.error.bind(console, 'Cannot connect to projectDB:'));
+projectDB.once('open', function() {
     // console.log('[DB ACTIVE]: /spina-me/users');
 });
 
@@ -32,40 +32,29 @@ userDB.once('open', function() {
 
 /* Setters for the fields */
 
-let userSchema = new Schema({
-    hash: {
-        type: String,
-    },
-    username: {
+let projectSchema = new Schema({
+    title: {
         type: String,
         unique: true,
         required: true,
     },
-    password: {
-        type: String,
-        required: true,
+    description: {
+      type: String,
+      required: true,
+    },
+    gitRepo: {
+      type: String,
+      required: true,
     },
 });
 
 /* Plugin that validates unique entries */
-userSchema.plugin(uniqueValidator);
-
-/* Helper methods on the userSchema */
-
-/* Prints the fields of a User
-* Parameters:
-*   none
-* Returns:
-*   none */
-userSchema.methods.debugPrinting = function() {
-    return 'name: ' + this.name + ', email: ' + this.email + ', password: ' + this.password +
-        ', time: ' + this.time + ', username ' + this.username + ', friends ' + this.friends;
-};
+projectSchema.plugin(uniqueValidator);
 
 /* Pre save function [AUTORUN]
  * Used to initialise fields upon saving
  * */
-userSchema.pre('save', function(next) {
+projectSchema.pre('save', function(next) {
     // TODO: Handle checks before invoking next
     // Next can be invoked with an error to make it cascade through
     // i.e. new Error('something went wrong')
@@ -74,78 +63,78 @@ userSchema.pre('save', function(next) {
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 
-let User = userDB.model('User', userSchema);
+let Project = projectDB.model('Project', projectSchema);
 
 /* Creates and returns a new database entry
 * Parameters:
-*   n = name
-*   e = email
-*   p = password
+*   JSON
 * Returns:
-*   new User instance */
-exports.createNewUser = function(u, p) {
-    return new User({
-        password: p,
-        username: u,
+*   new Project instance */
+exports.createNewProject = function(prj) {
+    return new Project({
+        title: prj.title,
+        description: prj.description,
+        gitRepo: prj.gitRepo,
     });
 };
 
-/* Saves the current User onto the DB
+/* Saves the current Project onto the DB
  * Parameters:
- *   user
+ *   project
  * Returns:
  *   Promise */
-exports.saveUser = function(user) {
-    return helper.saveHelper(user);
+exports.saveProject = function(prj) {
+    return helper.saveHelper(prj);
 };
 
-/* Retrieves one User from the DB
+/* Retrieves one Project from the DB
  * Parameters:
  *   Search parameters : { name : 'Anne' }
  * Returns:
  *   Promise */
 exports.find = function(p) {
-    return helper.findHelper(User, p);
+    return helper.findHelper(Project, p);
 };
 
-/* Retrieves multiple Users from the DB
+/* Retrieves multiple Projects from the DB
  * Parameters:
  *   Search parameters : { name : 'Anne' }
  * Returns:
  *   Promise */
 exports.findMultiple = function(p) {
-    return helper.findMultipleHelper(User, p);
+    return helper.findMultipleHelper(Project, p);
 };
 
-/* Removes a single User from the DB
+/* Removes a single Project from the DB
  * Parameters:
  *   Search parameters : { name : 'Anne' }
  * Returns:
  *   Promise */
-exports.removeUser = function(p) {
-    return helper.removeElem(User, p);
+exports.removeProject = function(p) {
+    return helper.removeElem(Project, p);
 };
 
-/* Removes multiple Users from the DB
+/* Removes multiple Projects from the DB
  * Parameters:
  *   Search parameters : { name : 'Anne' }
  * Returns:
  *   Promise */
 exports.removeMultiple = function(p) {
-    return helper.removeMultipleHelper(User, p);
+    return helper.removeMultipleHelper(Project, p);
 };
 
 /* */
-exports.updateHash = function(user, hash) {
+exports.updateProject = function(prj) {
   let query = {
-    'hash': hash,
+    'description': prj.description,
+    'gitRepo': prj.gitRepo,
   };
 
   let cond = {
-    'username': user.username,
+    'title': prj.title,
   };
 
-  return helper.updateHelper(User, cond, query);
+  return helper.updateHelper(Project, cond, query);
 };
 
 /* Export the User model *
