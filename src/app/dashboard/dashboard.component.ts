@@ -10,7 +10,8 @@ export class DashboardComponent implements OnInit {
   projects: any;
   selectedPrj: any;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+  }
 
   ngOnInit() {
     this.hash = 'foo';
@@ -31,8 +32,22 @@ export class DashboardComponent implements OnInit {
   }
 
   public select(prj) {
-    console.log('Got button select click');
     this.selectedPrj = prj;
+  }
+
+  public newPrj() {
+    this.selectedPrj = {};
+  }
+
+  public updatePrj() {
+    this.http
+      .post('/api/updateProjects', this.selectedPrj)
+      .subscribe(data => {
+        const retdata = JSON.parse(data.text());
+        this.retrieveProjects();
+      }, error => {
+        /* Handle login error */
+      });
   }
 
 }
