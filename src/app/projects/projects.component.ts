@@ -27,5 +27,9 @@ export class ProjectsComponent implements OnInit {
         /* Handle login error */
       });
   }
+
+  getYear(project) {
+    return project.date.split('/')[2];
+  }
 }
 

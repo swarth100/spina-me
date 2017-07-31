@@ -19,7 +19,13 @@
         <div  *ngFor="let project of projects">
           <div class="col l6 s12">
             <div class="container-text-title-left">
-              {{project.title}}
+              <div class="text-title-offset">
+                {{project.title}}
+              </div>
+              <div class="title-icon-box">
+                <i class="small material-icons">insert_invitations</i>
+                <div class="title-icon-box-text">{{getYear(project)}}</div>
+              </div>
             </div>
             <div class="container-text-left">
               {{project.description}}
