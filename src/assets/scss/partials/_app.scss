@@ -158,8 +158,13 @@ html, body {
 }
 
 .container-text-title-left {
+  position: relative;
   text-align: left;
   margin-top: 20px;
+}
+
+.text-title-offset {
+  margin-left: 40px;
 }
 
 .container-text, .container-text-left {
