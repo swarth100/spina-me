@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {Http} from '@angular/http';
 import {Router} from '@angular/router'
+import {AppStorage} from '../app-storage';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,8 @@ export class LoginComponent implements OnInit {
 
   username: any;
   password: any;
-  hash: any;
 
-  constructor(private http: Http, private router: Router) { }
+  constructor(private http: Http, private router: Router, private storage: AppStorage) { }
 
   ngOnInit() {
   }
@@ -26,11 +26,10 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         const retdata = JSON.parse(data.text());
         console.log(retdata);
-        this.username = retdata.username;
-        this.password = retdata.password;
-        /* TODO: Add save to hash for future checks */
-        this.hash = retdata.hash;
-        /* */
+
+        this.storage.saveHash(retdata.hash);
+        this.storage.saveUsername(retdata.username);
+
         this.router.navigateByUrl('/dashboard');
       }, error => {
         /* Handle login error */
