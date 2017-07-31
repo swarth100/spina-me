@@ -51,7 +51,7 @@ router.post('/login', (req, res, next) => {
 
 /* Routing to require access to projects */
 router.get('/projects', function(req, res) {
-  console.log('[index.html] : GET request to /projects/' + req.params.hash);
+  console.log('[index.html] : GET request to /projects');
 
   /* TODO: Use hash to perform a lookup check on users DB */
 
@@ -78,6 +78,7 @@ router.post('/updateProjects/:hash', function(req, res) {
   mongooseProject.updateProject(req.body)
     .then(function(msg) {
       /* SUCCESS */
+      return res.status(200).send(msg);
     })
     .catch(function(err) {
       console.log('No element in the database meets the search criteria');
@@ -94,6 +95,7 @@ router.post('/removeProjects/:hash', function(req, res) {
   mongooseProject.removeProject(req.body)
     .then(function(msg) {
       /* SUCCESS */
+      return res.status(200).send(msg);
     })
     .catch(function(err) {
       console.log('No element in the database meets the search criteria');
