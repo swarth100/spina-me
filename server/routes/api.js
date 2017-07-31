@@ -51,7 +51,7 @@ router.post('/login', (req, res, next) => {
 
 /* Routing to require access to projects */
 router.get('/projects', function(req, res) {
-  console.log('[index.html] : GET request to /projects/' + req.params.hash);
+  console.log('[index.html] : GET request to /projects');
 
   /* TODO: Use hash to perform a lookup check on users DB */
 
@@ -60,7 +60,9 @@ router.get('/projects', function(req, res) {
       for (let i = 0; i < prjs.length; i++) {
         // console.log(prjs[i]);
       }
-      res.send(prjs);
+      //console.log(prjs);
+      //console.log(prjs.sort(sortDates));
+      res.send(prjs.sort(sortDates).reverse());
     })
     .catch(function(err) {
       console.log('No element in the database meets the search criteria');
@@ -78,6 +80,7 @@ router.post('/updateProjects/:hash', function(req, res) {
   mongooseProject.updateProject(req.body)
     .then(function(msg) {
       /* SUCCESS */
+      return res.status(200).send(msg);
     })
     .catch(function(err) {
       console.log('No element in the database meets the search criteria');
@@ -94,10 +97,19 @@ router.post('/removeProjects/:hash', function(req, res) {
   mongooseProject.removeProject(req.body)
     .then(function(msg) {
       /* SUCCESS */
+      return res.status(200).send(msg);
     })
     .catch(function(err) {
       console.log('No element in the database meets the search criteria');
     });
 });
+
+const sortDates = function (a, b) {
+  let fromA = a.date.split("/");
+  let fA = new Date(fromA[2], fromA[1] - 1, fromA[0]);
+  let fromB = b.date.split("/");
+  let fB = new Date(fromB[2], fromB[1] - 1, fromB[0]);
+  return fA.getTime() - fB.getTime();
+};
 
 module.exports = router;

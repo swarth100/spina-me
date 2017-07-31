@@ -40,11 +40,12 @@ let projectSchema = new Schema({
     },
     description: {
       type: String,
-      required: true,
     },
     gitRepo: {
       type: String,
-      required: true,
+    },
+    date: {
+      type: String,
     },
 });
 
@@ -71,11 +72,7 @@ let Project = projectDB.model('Project', projectSchema);
 * Returns:
 *   new Project instance */
 exports.createNewProject = function(prj) {
-    return new Project({
-        title: prj.title,
-        description: prj.description,
-        gitRepo: prj.gitRepo,
-    });
+    return new Project(prj);
 };
 
 /* Saves the current Project onto the DB
@@ -125,10 +122,7 @@ exports.removeMultiple = function(p) {
 
 /* */
 exports.updateProject = function(prj) {
-  let query = {
-    'description': prj.description,
-    'gitRepo': prj.gitRepo,
-  };
+  let query = prj;
 
   let cond = {
     'title': prj.title,

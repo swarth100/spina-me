@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import {AppService} from 'app/app.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {MaterializeModule} from "angular2-materialize";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
+    MaterializeModule,
     AppRoutingModule,
     HttpModule,
     FormsModule,
