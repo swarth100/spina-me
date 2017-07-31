@@ -13,5 +13,25 @@
       </div>
     </div>
   </nav>
+  <div class="row no-margin padding-nav">
+    <div class="col s10 offset-s1">
+      <div class="row no-margin">
+        <div  *ngFor="let project of projects">
+          <div class="col l6 s12">
+            <div class="container-text-title-left">
+              {{project.title}}
+            </div>
+            <div class="container-text-left">
+              {{project.description}}
+            </div>
+            <a href="{{project.gitRepo}}" class="container-link-left">
+              {{project.gitRepo}}
+            </a>
+            <div class="container-link-left-padding"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
