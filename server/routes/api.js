@@ -71,37 +71,38 @@ router.get('/projects', function(req, res) {
 });
 
 /* Routing to update a selected project */
-router.post('/updateProjects/:hash', function(req, res) {
+router.post('/updateProjects/:username/:hash', function(req, res) {
   console.log('[index.html] : POST request to /updateProjects/');
 
-  /* TODO: Use hash to perform a lookup check on users DB */
-
-  /* Updates and if not found, inserts */
-  mongooseProject.updateProject(req.body)
-    .then(function(msg) {
-      /* SUCCESS */
-      return res.status(200).send(msg);
-    })
-    .catch(function(err) {
-      console.log('No element in the database meets the search criteria');
-    });
+  checkUserData(req, res, function () {
+    /* Updates and if not found, inserts */
+    mongooseProject.updateProject(req.body)
+      .then(function (msg) {
+        /* SUCCESS */
+        return res.status(200).send(msg);
+      })
+      .catch(function (err) {
+        console.log('No element in the database meets the search criteria');
+      });
+  });
 });
 
+
 /* Routing to update a selected project */
-router.post('/removeProjects/:hash', function(req, res) {
+router.post('/removeProjects/:username/:hash', function(req, res) {
   console.log('[index.html] : POST request to /removeProjects/');
 
-  /* TODO: Use hash to perform a lookup check on users DB */
-
-  /* Updates and if not found, inserts */
-  mongooseProject.removeProject(req.body)
-    .then(function(msg) {
-      /* SUCCESS */
-      return res.status(200).send(msg);
-    })
-    .catch(function(err) {
-      console.log('No element in the database meets the search criteria');
-    });
+  checkUserData(req, res, function () {
+    /* Updates and if not found, inserts */
+    mongooseProject.removeProject(req.body)
+      .then(function (msg) {
+        /* SUCCESS */
+        return res.status(200).send(msg);
+      })
+      .catch(function (err) {
+        console.log('No element in the database meets the search criteria');
+      });
+  });
 });
 
 const sortDates = function (a, b) {
@@ -110,6 +111,21 @@ const sortDates = function (a, b) {
   let fromB = b.date.split("/");
   let fB = new Date(fromB[2], fromB[1] - 1, fromB[0]);
   return fA.getTime() - fB.getTime();
+};
+
+const checkUserData = function (req, res, cb) {
+  mongooseUser.find({'username': req.params.username})
+    .then(function(usr) {
+      /* SUCCESS */
+      if (usr.hash !== req.params.hash) {
+        throw new Error();
+      } else {
+        cb ();
+      }
+    })
+    .catch(function(err) {
+      return res.status(401).send({});
+    });
 };
 
 module.exports = router;
