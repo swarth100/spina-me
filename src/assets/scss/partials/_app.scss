@@ -148,7 +148,7 @@ html, body {
   text-align: initial;
 }
 
-.container-text-title {
+.container-text-title, .container-text-title-left {
   width: 100%;
   margin-top: 30px;
   font-size: 2rem;
@@ -157,7 +157,12 @@ html, body {
   text-align: center;
 }
 
-.container-text {
+.container-text-title-left {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.container-text, .container-text-left {
   width: 100%;
   font-size: 1rem;
   color: $dark-brown-text-color;
@@ -166,10 +171,19 @@ html, body {
   margin-bottom: 30px;
 }
 
-.container-text-highlight {
+.container-text-left {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.container-text-highlight, .container-link-left {
   margin-top: 10px;
   font-weight: 400;
   color: $dark-text-color;
+}
+
+.container-link-left-padding {
+  padding-bottom: 30px;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -180,6 +194,10 @@ html, body {
   width: 100%;
   position: absolute;
   background-color: $dark-pastel-yellow;
+}
+
+.padding-nav {
+  padding-top: 70px;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
