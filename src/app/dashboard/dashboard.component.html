@@ -11,9 +11,13 @@
     </div>
     <div class="col s8 m9">
       <div class="row" *ngIf="selectedPrj">
-        <div class="input-field col s12">
+        <div class="input-field col s6">
           <input id="title" type="text" [(ngModel)]="selectedPrj.title" placeholder="">
           <label for="title" class="active">Title</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="date" type="text" [(ngModel)]="selectedPrj.date" placeholder="" materialize="pickadate" [materializeParams]="[{format:'dd/mm/yyyy'}]">
+          <label for="date" class="active">Date</label>
         </div>
         <div class="input-field col s12">
           <textarea id="description" class="materialize-textarea" [(ngModel)]="selectedPrj.description" placeholder=""></textarea>
