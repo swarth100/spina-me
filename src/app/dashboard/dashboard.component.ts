@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
+import {AppStorage} from '../app-storage';
+import {Router} from '@angular/router';
 
 declare let Materialize: any;
 
@@ -12,14 +14,17 @@ export class DashboardComponent implements OnInit {
   projects: any;
   selectedPrj: any;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private router: Router, private storage: AppStorage) {
   }
 
   ngOnInit() {
-    this.hash = 'foo';
-    console.log('/api/projects/' + this.hash);
-    this.retrieveProjects();
-    this.newPrj();
+    if (this.storage.hashNotNull()) {
+      this.hash = this.storage.getData();
+      this.retrieveProjects();
+      this.newPrj();
+    } else {
+      this.router.navigateByUrl('/login');
+    }
   }
 
   retrieveProjects() {
@@ -51,6 +56,7 @@ export class DashboardComponent implements OnInit {
           this.retrieveProjects();
         }, error => {
           /* Handle login error */
+          this.router.navigateByUrl('/login');
         });
     }
   }
@@ -64,6 +70,7 @@ export class DashboardComponent implements OnInit {
           this.retrieveProjects();
         }, error => {
           /* Handle login error */
+          this.router.navigateByUrl('/login');
         });
     }
   }
