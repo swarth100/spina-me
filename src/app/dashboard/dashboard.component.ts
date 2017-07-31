@@ -25,9 +25,8 @@ export class DashboardComponent implements OnInit {
     this.http
       .get('/api/projects')
       .subscribe(data => {
-        const retdata = JSON.parse(data.text());
-        // console.log(retdata);
-        this.projects = retdata;
+          const retdata = JSON.parse(data.text());
+          this.projects = retdata;
       }, error => {
         /* Handle login error */
       });
@@ -35,12 +34,10 @@ export class DashboardComponent implements OnInit {
 
   public select(prj) {
     this.selectedPrj = prj;
-    Materialize.updateTextFields();
   }
 
   public newPrj() {
     this.selectedPrj = {};
-    Materialize.updateTextFields();
   }
 
   public updatePrj() {
