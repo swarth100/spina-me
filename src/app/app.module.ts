@@ -14,7 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import {AppService} from 'app/app.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {MaterializeModule} from "angular2-materialize";
+import {MaterializeModule} from 'angular2-materialize';
+import {AppStorage} from 'app/app-storage';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import {MaterializeModule} from "angular2-materialize";
     HttpModule,
     FormsModule,
   ],
-  providers: [AppService],
+  providers: [AppService, AppStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
