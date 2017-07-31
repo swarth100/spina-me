@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
     this.hash = 'foo';
     console.log('/api/projects/' + this.hash);
     this.retrieveProjects();
+    this.newPrj();
   }
 
   retrieveProjects() {
@@ -41,6 +42,7 @@ export class DashboardComponent implements OnInit {
   }
 
   public updatePrj() {
+    console.log(this.selectedPrj);
     if (this.selectedPrj.title) {
       this.http
         .post('/api/updateProjects/' + this.hash, this.selectedPrj)
