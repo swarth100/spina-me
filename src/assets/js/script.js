@@ -1,13 +1,16 @@
 /* jQuery component initialisation */
 
 const initialiseComponents = function() {
-  /* Initialise parallax Materialize component */
-  $('.parallax').parallax();
+  /* if ($window .width() > 800) {
+  .parallax-container
+  } */
 
   /* For each pushpin Materialize component, initialize them */
   $('.pushpin-demo-nav-left').each(function (index) {
     const $this = $(this);
     const $target = $('#' + $(this).attr('data-target'));
+
+    $this.pushpin('remove');
 
     /* Each push-pin component has a unique top and bottom which are dependent on heights of divs */
     $this.pushpin({
@@ -20,6 +23,8 @@ const initialiseComponents = function() {
   $('.pushpin-demo-nav-right').each(function (index) {
     const $this = $(this);
     const $target = $('#' + $(this).attr('data-target'));
+
+    $this.pushpin('remove');
 
     /* To overlay it till the end of the page, bottom must be set to Infinity */
     $this.pushpin({
@@ -39,6 +44,11 @@ const initialiseComponents = function() {
       $("#info-side-nav").removeClass("slide-in-right").addClass("slide-out-right");
     }
   });
+};
+
+$(document).ready(function() {
+  /* Initialise parallax Materialize component */
+  $('.parallax').parallax();
 
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -48,7 +58,25 @@ const initialiseComponents = function() {
     close: 'Ok',
     closeOnSelect: false // Close upon selecting a date,
   });
-};
+
+  $("#about-btn").click(function () {
+    $('html, body').animate({
+      scrollTop: $("#about").offset().top
+    }, 500);
+  });
+
+  $("#projects-btn").click(function () {
+    $('html, body').animate({
+      scrollTop: $("#projects").offset().top
+    }, 500);
+  });
+
+  $("#contact-btn").click(function () {
+    $('html, body').animate({
+      scrollTop: $("#contact").offset().top
+    }, 500);
+  });
+});
 
 $(document).ready(initialiseComponents);
 
