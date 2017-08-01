@@ -22,7 +22,7 @@
   left: 0;
 }
 
-.home-text, .home-text-small {
+.home-text, .home-text-small, .home-arrow {
   position: absolute;
   top: 70%;  /* position the top  edge of the element at the middle of the parent */
   left: 50%; /* position the left edge of the element at the middle of the parent */
@@ -42,6 +42,10 @@
   margin-top: 50px;
   border-bottom: none;
   border-top: 1px solid white;
+}
+
+.home-arrow {
+  margin-top: 200px;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
