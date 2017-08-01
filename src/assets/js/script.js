@@ -61,23 +61,33 @@ $(document).ready(function() {
     closeOnSelect: false // Close upon selecting a date,
   });
 
-  $("#about-btn").click(function () {
+  scroll_about = function () {
     $('html, body').animate({
       scrollTop: $("#about").offset().top
     }, 500);
-  });
+  };
 
-  $("#projects-btn").click(function () {
+  $("#about-arrow").click(scroll_about);
+  $("#about-btn").click(scroll_about);
+  $("#about-nav").click(scroll_about);
+
+  scroll_projects = function () {
     $('html, body').animate({
       scrollTop: $("#projects").offset().top
     }, 500);
-  });
+  };
 
-  $("#contact-btn").click(function () {
+  $("#projects-btn").click(scroll_projects);
+  $("#projects-nav").click(scroll_projects);
+
+  scroll_contact = function () {
     $('html, body').animate({
       scrollTop: $("#contact").offset().top
     }, 500);
-  });
+  };
+
+  $("#contact-btn").click(scroll_contact);
+  $("#contact-nav").click(scroll_contact);
 });
 
 $(document).ready(initialiseComponents);
