@@ -44,6 +44,15 @@ const initialiseComponents = function() {
       $("#info-side-nav").removeClass("slide-in-right").addClass("slide-out-right");
     }
   });
+
+  $('.button-collapse').sideNav({
+    menuWidth: $(window).width()*0.5, // Default is 300
+    edge: 'left', // Choose the horizontal origin
+    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    draggable: true, // Choose whether you can drag to open on touch screens,
+    onOpen: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is opened
+    onClose: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is closed
+  });
 };
 
 $(document).ready(function() {
@@ -51,6 +60,8 @@ $(document).ready(function() {
   $('.parallax').parallax();
 
   $('.scrollspy').scrollSpy();
+
+  $(".button-collapse").sideNav();
 
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
