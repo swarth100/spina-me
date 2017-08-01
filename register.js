@@ -3,6 +3,8 @@
  * The registration API is not accessible from the server running on port 3000
  */
 
+require('dotenv').config();
+
 const express = require('express');
 const authentication = require('./server/models/authentication/authentication');
 const util = require('util');
