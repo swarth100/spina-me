@@ -83,6 +83,23 @@ html, body {
   padding: 0;
 }
 
+.table-of-contents a.active {
+  border-left: none;
+  padding-left: 20px;
+  border-bottom: 2px solid $dark-text-color;
+}
+
+.table-of-contents a:hover {
+  border-left: none;
+  padding-left: 20px;
+  border-bottom: 2px solid $dark-text-color;
+  background-color: $dark-pastel-yellow;
+}
+
+.table-of-contents li:hover {
+  background-color: $dark-pastel-yellow;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* NAV PUSHPIN RIGHT ELEMENT */
 
