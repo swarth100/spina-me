@@ -6,16 +6,20 @@ let mongoose = require('mongoose');
 let helper = require('./mongoose');
 
 /* Load the database address from the config file
- * Removesthe double quotation mark using replace function
+ * Removes the double quotation mark using replace function
  */
-let dbConfig = 'mongodb://localhost:27017';
+let dbConfig = 'mongodb://' +
+  process.env.DB_USER + ':' +
+  process.env.DB_PASS + '@' +
+  process.env.DB_HOST + ':' +
+  process.env.DB_PORT;
 
 let uniqueValidator = require('mongoose-unique-validator');
 
 /* Connect to mongoDB users database */
 
 let Schema = mongoose.Schema;
-let projectDBName = '/spina-me/projects';
+let projectDBName = '/spina-me';
 mongoose.Promise = global.Promise;
 let projectDB = mongoose.createConnection(dbConfig + projectDBName);
 
