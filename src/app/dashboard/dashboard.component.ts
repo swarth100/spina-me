@@ -44,6 +44,7 @@ export class DashboardComponent implements OnInit {
 
   public newPrj() {
     this.selectedPrj = {};
+    this.selectedPrj.date =  new Date().toJSON().slice(0, 10);
   }
 
   public updatePrj() {
