@@ -4,10 +4,11 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "dev": "concurrently --kill-others \"nodemon server\" \"npm run build-watch\" \"npm run watch-sass\"",
-    "build": "./node_modules/node-sass/bin/node-sass ./src/assets/scss/styles.scss -o ./src && ng build",
-    "build-watch": "ng build --watch --progress=false",
-    "watch-sass": "./node_modules/node-sass/bin/node-sass --watch ./src/assets/scss/styles.scss -o ./src",
+    "dev": "concurrently --kill-others \"nodemon server\" \"npm run ng-watch\" \"npm run watch-sass\"",
+    "build": "npm run build-sass && ng build",
+    "ng-watch": "ng build --watch --progress=false",
+    "build-sass": "./node_modules/node-sass/bin/node-sass ./src/assets/scss/styles.scss -o ./src",
+    "watch-sass": "npm run build-sass --watch",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
