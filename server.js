@@ -4,6 +4,8 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 
+require('dotenv').config();
+
 // Get our API routes
 const api = require('./server/routes/api');
 const authentication = require('./server/models/authentication/authentication');
