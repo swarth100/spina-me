@@ -60,8 +60,7 @@ router.get('/projects', function(req, res) {
       for (let i = 0; i < prjs.length; i++) {
         // console.log(prjs[i]);
       }
-      //console.log(prjs);
-      //console.log(prjs.sort(sortDates));
+      // res.send(prjs);
       res.send(prjs.sort(sortDates).reverse());
     })
     .catch(function(err) {
