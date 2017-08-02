@@ -128,6 +128,8 @@ $(window).on('resize', initialiseComponents);
 
 $(window).scroll(function(){
   $(".home-overlay").css("opacity", 0.3 + $(window).scrollTop() / ($(window).height()*2));
+
+  $(document).ready(initialiseComponents);
 });
 
 /* The following code is courtesy of:
