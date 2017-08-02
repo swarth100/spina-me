@@ -29,9 +29,11 @@
             <div class="container-text-left">
               {{project.description}}
             </div>
-            <a href="{{project.gitRepo}}" class="container-link-left">
-              {{project.gitRepo}}
-            </a>
+            <div  *ngFor="let link of project.links; let i = index; trackBy: trackByIdx" >
+              <a href="{{link.link}}" target="_blank" class="container-link-left">
+                {{link.name}}
+              </a>
+            </div>
             <div class="container-link-left-padding"></div>
           </div>
         </div>

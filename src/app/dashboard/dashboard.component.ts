@@ -38,13 +38,28 @@ export class DashboardComponent implements OnInit {
       });
   }
 
+  private newLinkObj() {
+    return {
+      'name': '',
+      'link': '',
+    };
+  }
+
   public select(prj) {
     this.selectedPrj = prj;
   }
 
   public newPrj() {
     this.selectedPrj = {};
-    this.selectedPrj.date =  new Date().toJSON().slice(0, 10);
+    this.selectedPrj.links = [this.newLinkObj()];
+  }
+
+  public addLink() {
+    this.selectedPrj.links.push(this.newLinkObj());
+  }
+
+  public removeLink(index) {
+    this.selectedPrj.links.splice(index, 1);
   }
 
   public updatePrj() {
@@ -69,11 +84,16 @@ export class DashboardComponent implements OnInit {
         .subscribe(data => {
           const retdata = JSON.parse(data.text());
           this.retrieveProjects();
+          this.newPrj();
         }, error => {
           /* Handle login error */
           this.router.navigateByUrl('/login');
         });
     }
+  }
+
+  trackByIdx(index, val) {
+    return index;
   }
 
 }

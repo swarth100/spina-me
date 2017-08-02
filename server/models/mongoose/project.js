@@ -45,11 +45,13 @@ let projectSchema = new Schema({
     description: {
       type: String,
     },
-    gitRepo: {
-      type: String,
+    links: {
+      type: Array,
+      default: [],
     },
     date: {
       type: String,
+      default: "01/01/1970",
     },
 });
 
