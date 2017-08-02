@@ -1,28 +1,26 @@
-# SpinaMe
+# Spina.me
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
+Alberto Spina's personal website.
 
-## Development server
+## Front End
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The project was generated via `angular-cli`. <br>
+`Angular 4` is used for the frontend together with `Materialize` (for CSS and JS Components) and `SCSS` <br>
+A dashboard is in place to allow dynamic editing of the website's contents (e.g. Projects, Contact details)
 
-## Code scaffolding
+## Back End
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+The backend and API routes are serviced via `nodeJS` and `expressJS`. <br>
+The website is currently hosted on a `AWS` Server <br>
+Other npm packages used:
+- `bcryptjs`: Used to securely authenticate users storing encrypted passwords.
+- `passport`: Used together with bcrypt for authentication.
+- `dotenv`: Used to secure environment variables.
+- `mongoose`: Used together with mongoDB.
 
-## Build
+## Database
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+There is a `mongo` database accessed via the `mongoose` npm wrapper. <br>
+Access to the database requires authentication both mongo and bcrypt authentication.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
