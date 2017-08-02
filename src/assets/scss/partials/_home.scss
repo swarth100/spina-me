@@ -22,6 +22,10 @@
   left: 0;
 }
 
+.home-padding {
+  padding-top: 20vh;
+}
+
 .home-text, .home-text-small, .home-arrow {
   position: absolute;
   top: 70%;  /* position the top  edge of the element at the middle of the parent */
@@ -45,7 +49,7 @@
 }
 
 .home-arrow {
-  margin-top: 200px;
+  margin-top: 25vh;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
