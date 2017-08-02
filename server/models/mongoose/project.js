@@ -47,11 +47,11 @@ let projectSchema = new Schema({
     },
     links: {
       type: Array,
-      // default: [],
+      default: [],
     },
     date: {
       type: String,
-      // default: "01/01/70",
+      default: "01/01/1970",
     },
 });
 
