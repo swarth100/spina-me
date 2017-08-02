@@ -126,6 +126,13 @@ html, body {
   z-index: 15;
 }
 
+.pushpin-demo-nav-side {
+  width: auto;
+  position: absolute;
+  left: 0;
+  z-index: 15;
+}
+
 .side-nav-btn {
   color: $dark-text-color;
 }
