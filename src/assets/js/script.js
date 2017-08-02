@@ -33,6 +33,19 @@ const initialiseComponents = function() {
     });
   });
 
+  $('.pushpin-demo-nav-side').each(function (index) {
+    const $this = $(this);
+    const $target = $('#' + $(this).attr('data-target'));
+
+    $this.pushpin('remove');
+
+    /* To overlay it till the end of the page, bottom must be set to Infinity */
+    $this.pushpin({
+      top: $target.offset().top,
+      bottom: Infinity,
+    });
+  });
+
   /* Handle scrolling animations for right-nav push-pin component */
   $(window).scroll(function() {
     let scroll = $(window).scrollTop();
@@ -40,9 +53,20 @@ const initialiseComponents = function() {
     /* According on window height determine if it must be scrolled in or out */
     if (scroll >= $(window).height()) {
       $("#info-side-nav").addClass("slide-in-right").removeClass("slide-out-right");
+      $("#menu-side-nav").addClass("slide-out-right").removeClass("slide-in-right");
     } else {
       $("#info-side-nav").removeClass("slide-in-right").addClass("slide-out-right");
+      $("#menu-side-nav").removeClass("slide-out-right").addClass("slide-in-right");
     }
+  });
+
+  $('.button-collapse').sideNav({
+    menuWidth: $(window).width()*0.5, // Default is 300
+    edge: 'left', // Choose the horizontal origin
+    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    draggable: true, // Choose whether you can drag to open on touch screens,
+    onOpen: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is opened
+    onClose: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is closed
   });
 };
 
@@ -51,6 +75,8 @@ $(document).ready(function() {
   $('.parallax').parallax();
 
   $('.scrollspy').scrollSpy();
+
+  $(".button-collapse").sideNav();
 
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -68,6 +94,7 @@ $(document).ready(function() {
   };
 
   $("#about-arrow").click(scroll_about);
+  $("#about-btn-side").click(scroll_about);
   $("#about-btn").click(scroll_about);
   $("#about-nav").click(scroll_about);
 
@@ -78,6 +105,7 @@ $(document).ready(function() {
   };
 
   $("#projects-btn").click(scroll_projects);
+  $("#projects-btn-side").click(scroll_projects);
   $("#projects-nav").click(scroll_projects);
 
   scroll_contact = function () {
@@ -87,6 +115,7 @@ $(document).ready(function() {
   };
 
   $("#contact-btn").click(scroll_contact);
+  $("#contact-btn-side").click(scroll_contact);
   $("#contact-nav").click(scroll_contact);
 });
 

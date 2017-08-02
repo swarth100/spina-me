@@ -6,8 +6,19 @@
       </div>
     </div>
   </nav>
-  <nav class="overflow-hidden">
-    <nav id="info-side-nav" class="pushpin-demo-nav pushpin-demo-nav-right z-depth-0 hide-on-med-and-down" data-target="about">
+  <nav class="overflow-hidden show-on-medium-and-down">
+    <nav id="menu-side-nav" class="pushpin-demo-nav pushpin-demo-nav-side z-depth-0" data-target="about">
+      <div class="nav-wrapper dark-nav">
+        <div class="container">
+          <a href="#" data-activates="slide-out" class="button-collapse side-nav-btn show-on-medium-and-down">
+            <i class="material-icons">menu</i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </nav>
+  <nav class="overflow-hidden hide-on-med-and-down">
+    <nav id="info-side-nav" class="pushpin-demo-nav pushpin-demo-nav-right z-depth-0" data-target="about">
       <div class="nav-wrapper light-nav">
         <div class="container">
           <ul class="section table-of-contents">
@@ -20,6 +31,15 @@
       </div>
     </nav>
   </nav>
+
+  <!-- SIDE NAV -->
+  <ul id="slide-out" class="side-nav section table-of-contents">
+    <li class="no-padding"><a class="dark-text-thin" id="about-btn-side" href="#about">About</a></li>
+    <li class="no-padding"><a class="dark-text-thin" id="projects-btn-side" href="#projects">Projects</a></li>
+    <li class="no-padding"><a class="dark-text-thin" id="contact-btn-side" href="#contact">Contact</a></li>
+    <li class="no-padding"><a class="dark-text-thin" href="#!">Resume</a></li>
+  </ul>
+
   <div class="row no-margin">
     <div class="col l3 offset-l1 s10 offset-s1">
       <div class="container-text-title">
