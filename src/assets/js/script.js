@@ -33,6 +33,19 @@ const initialiseComponents = function() {
     });
   });
 
+  $('.pushpin-demo-nav-side').each(function (index) {
+    const $this = $(this);
+    const $target = $('#' + $(this).attr('data-target'));
+
+    $this.pushpin('remove');
+
+    /* To overlay it till the end of the page, bottom must be set to Infinity */
+    $this.pushpin({
+      top: $target.offset().top,
+      bottom: Infinity,
+    });
+  });
+
   /* Handle scrolling animations for right-nav push-pin component */
   $(window).scroll(function() {
     let scroll = $(window).scrollTop();
@@ -40,8 +53,10 @@ const initialiseComponents = function() {
     /* According on window height determine if it must be scrolled in or out */
     if (scroll >= $(window).height()) {
       $("#info-side-nav").addClass("slide-in-right").removeClass("slide-out-right");
+      $("#menu-side-nav").addClass("slide-out-right").removeClass("slide-in-right");
     } else {
       $("#info-side-nav").removeClass("slide-in-right").addClass("slide-out-right");
+      $("#menu-side-nav").removeClass("slide-out-right").addClass("slide-in-right");
     }
   });
 
