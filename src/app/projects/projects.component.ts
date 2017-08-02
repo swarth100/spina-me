@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Http} from '@angular/http';
 
+import * as $ from 'jquery';
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html'
@@ -23,6 +25,9 @@ export class ProjectsComponent implements OnInit {
         const retdata = JSON.parse(data.text());
         // console.log(retdata);
         this.projects = retdata;
+
+        $(document).ready(initialiseComponents);
+
       }, error => {
         /* Handle login error */
       });

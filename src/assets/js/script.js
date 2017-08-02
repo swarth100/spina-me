@@ -1,6 +1,6 @@
 /* jQuery component initialisation */
 
-const initialiseComponents = function() {
+const initialiseComponents = function () {
   /* if ($window .width() > 800) {
   .parallax-container
   } */
@@ -129,7 +129,7 @@ $(window).on('resize', initialiseComponents);
 $(window).scroll(function(){
   $(".home-overlay").css("opacity", 0.3 + $(window).scrollTop() / ($(window).height()*2));
 
-  $(document).ready(initialiseComponents);
+  // $(document).ready(initialiseComponents);
 });
 
 /* The following code is courtesy of:
