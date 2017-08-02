@@ -1,0 +1,49 @@
+<div class="full-page">
+  <div class="top-padding"></div>
+  <a class="waves-effect waves-light btn" (click)="newPrj()">NEW</a>
+  <a class="waves-effect waves-light btn" (click)="updatePrj()">SAVE</a>
+  <a class="waves-effect waves-light btn" (click)="removePrj()">DELETE</a>
+  <div class="row projects-container">
+    <div class="col s3 offset-s1 m2 offset-s1">
+      <div  *ngFor="let project of projects">
+        <a class="waves-effect waves-light btn btn-full-width" (click)="select(project)">{{project.title}}</a>
+      </div>
+    </div>
+    <div class="col s8 m9">
+      <div class="row" *ngIf="selectedPrj">
+        <div class="input-field col s6">
+          <input id="title" type="text" [(ngModel)]="selectedPrj.title" placeholder="">
+          <label for="title" class="active">Title</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="date" type="text" [(ngModel)]="selectedPrj.date" placeholder="" materialize="pickadate" [materializeParams]="[{format:'dd/mm/yyyy'}]">
+          <label for="date" class="active">Date</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="description" class="materialize-textarea" [(ngModel)]="selectedPrj.description" placeholder=""></textarea>
+          <label for="description" class="active">Description</label>
+        </div>
+        <div  *ngFor="let link of selectedPrj.links; let i = index; trackBy: trackByIdx" >
+          <div class="input-field col s5">
+            <input id="name{{i}}" type="text" [(ngModel)]="selectedPrj.links[i].name" placeholder="">
+            <label for="name{{i}}" class="active">Name</label>
+          </div>
+          <div class="input-field col s5">
+            <input id="link{{i}}" type="text" [(ngModel)]="selectedPrj.links[i].link" placeholder="">
+            <label for="link{{i}}" class="active">Link</label>
+          </div>
+          <div class="input-field col s2">
+            <a class="waves-effect waves-light btn btn-full-width" (click)="removeLink(i)">
+              <i class="material-icons">remove</i>
+            </a>
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <a class="waves-effect waves-light btn" (click)="addLink()">
+            <i class="material-icons">add</i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
