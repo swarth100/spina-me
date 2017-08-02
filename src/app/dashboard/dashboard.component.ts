@@ -44,7 +44,16 @@ export class DashboardComponent implements OnInit {
 
   public newPrj() {
     this.selectedPrj = {};
+    this.selectedPrj.links = [''];
     this.selectedPrj.date =  new Date().toJSON().slice(0, 10);
+  }
+
+  public addLink() {
+    this.selectedPrj.links.push('');
+  }
+
+  public removeLink(index) {
+    this.selectedPrj.links.splice(index, 1);
   }
 
   public updatePrj() {
@@ -69,11 +78,16 @@ export class DashboardComponent implements OnInit {
         .subscribe(data => {
           const retdata = JSON.parse(data.text());
           this.retrieveProjects();
+          this.newPrj();
         }, error => {
           /* Handle login error */
           this.router.navigateByUrl('/login');
         });
     }
+  }
+
+  trackByIdx(index, val) {
+    return index;
   }
 
 }
