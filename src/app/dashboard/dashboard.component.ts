@@ -38,18 +38,24 @@ export class DashboardComponent implements OnInit {
       });
   }
 
+  private newLinkObj() {
+    return {
+      'name': '',
+      'link': '',
+    };
+  }
+
   public select(prj) {
     this.selectedPrj = prj;
   }
 
   public newPrj() {
     this.selectedPrj = {};
-    this.selectedPrj.links = [''];
-    this.selectedPrj.date =  new Date().toJSON().slice(0, 10);
+    this.selectedPrj.links = [this.newLinkObj()];
   }
 
   public addLink() {
-    this.selectedPrj.links.push('');
+    this.selectedPrj.links.push(this.newLinkObj());
   }
 
   public removeLink(index) {
