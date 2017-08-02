@@ -8,7 +8,7 @@
     "build": "npm run build-sass && ng build",
     "ng-watch": "ng build --watch --progress=false",
     "build-sass": "./node_modules/node-sass/bin/node-sass ./src/assets/scss/styles.scss -o ./src",
-    "watch-sass": "npm run build-sass --watch",
+    "watch-sass": "./node_modules/node-sass/bin/node-sass --watch ./src/assets/scss/styles.scss -o ./src",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
