@@ -94,6 +94,7 @@ $(document).ready(function() {
   };
 
   $("#about-arrow").click(scroll_about);
+  $("#about-btn-side").click(scroll_about);
   $("#about-btn").click(scroll_about);
   $("#about-nav").click(scroll_about);
 
@@ -104,6 +105,7 @@ $(document).ready(function() {
   };
 
   $("#projects-btn").click(scroll_projects);
+  $("#projects-btn-side").click(scroll_projects);
   $("#projects-nav").click(scroll_projects);
 
   scroll_contact = function () {
@@ -113,6 +115,7 @@ $(document).ready(function() {
   };
 
   $("#contact-btn").click(scroll_contact);
+  $("#contact-btn-side").click(scroll_contact);
   $("#contact-nav").click(scroll_contact);
 });
 
