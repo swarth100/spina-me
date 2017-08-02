@@ -23,9 +23,21 @@
           <textarea id="description" class="materialize-textarea" [(ngModel)]="selectedPrj.description" placeholder=""></textarea>
           <label for="description" class="active">Description</label>
         </div>
+        <div  *ngFor="let link of selectedPrj.links; let i = index; trackBy: trackByIdx" >
+          <div class="input-field col s10">
+            <input id="link+{{i}}" type="text" [(ngModel)]="selectedPrj.links[i]" placeholder="">
+            <label for="link+{{i}}" class="active">Link</label>
+          </div>
+          <div class="input-field col s2">
+            <a class="waves-effect waves-light btn btn-full-width" (click)="removeLink(i)">
+              <i class="material-icons">remove</i>
+            </a>
+          </div>
+        </div>
         <div class="input-field col s12">
-          <input id="git-repo" type="text" [(ngModel)]="selectedPrj.gitRepo" placeholder="">
-          <label for="git-repo" class="active">Git Repo</label>
+          <a class="waves-effect waves-light btn" (click)="addLink()">
+            <i class="material-icons">add</i>
+          </a>
         </div>
       </div>
     </div>
