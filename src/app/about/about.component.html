@@ -2,10 +2,20 @@
   <nav class="pushpin-demo-nav pushpin-demo-nav-left" data-target="about">
     <div class="nav-wrapper dark-nav">
       <div class="container">
-        <a href="#" data-activates="slide-out" class="button-collapse side-nav-btn show-on-medium-and-down"><i class="material-icons">menu</i></a>
         <a id="about-nav" href="#about" class="brand-logo dark-text centre-align">{{title}}</a>
       </div>
     </div>
+  </nav>
+  <nav class="overflow-hidden">
+    <nav id="menu-side-nav" class="pushpin-demo-nav pushpin-demo-nav-side z-depth-0 show-on-medium-and-down" data-target="about">
+      <div class="nav-wrapper dark-nav">
+        <div class="container">
+          <a href="#" data-activates="slide-out" class="button-collapse side-nav-btn show-on-medium-and-down">
+            <i class="material-icons">menu</i>
+          </a>
+        </div>
+      </div>
+    </nav>
   </nav>
   <nav class="overflow-hidden">
     <nav id="info-side-nav" class="pushpin-demo-nav pushpin-demo-nav-right z-depth-0 hide-on-med-and-down" data-target="about">
