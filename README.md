@@ -21,6 +21,6 @@ Other npm packages used:
 ## Database
 
 There is a `mongo` database accessed via the `mongoose` npm wrapper. <br>
-Access to the database requires authentication both mongo and bcrypt authentication.
+Access to the database requires both mongo and bcrypt authentication.
 
 
