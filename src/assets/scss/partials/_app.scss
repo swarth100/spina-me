@@ -82,11 +82,13 @@ html, body {
 .dark-text-thin {
   color: $dark-text-color !important;
   font-weight: 400 !important;
+  transition: all .5s ease-in;
 }
 
 .dark-text-thin:hover, .dark-text-thin:active {
   padding-left: 32px !important;
   font-weight: 500 !important;
+  transition: all .5s ease-in;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -251,6 +253,15 @@ html, body {
   margin-top: 10px;
   font-weight: 400;
   color: $dark-text-color;
+}
+
+.text-hover {
+  transition: all .5s ease-in;
+}
+
+.text-hover:hover {
+  transition: all .5s ease-in;
+  color: $text-hover;
 }
 
 .container-link-left-padding {

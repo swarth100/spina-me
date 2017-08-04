@@ -30,7 +30,7 @@
               {{project.description}}
             </div>
             <div  *ngFor="let link of project.links; let i = index; trackBy: trackByIdx" >
-              <a href="{{link.link}}" target="_blank" class="container-link-left">
+              <a href="{{link.link}}" target="_blank" class="container-link-left text-hover">
                 {{link.name}}
               </a>
             </div>
