@@ -282,4 +282,24 @@ html, body {
   padding-top: 70px;
 }
 
+.full-img-container, .half-img-container {
+  width: auto;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.half-img-container {
+  height: 50vh;
+}
+
+.img-fit {
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  position: absolute;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------ */
