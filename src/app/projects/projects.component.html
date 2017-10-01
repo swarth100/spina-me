@@ -35,8 +35,9 @@
             </div>
             <div  *ngFor="let link of project.links; let i = index; trackBy: trackByIdx" >
               <a href="{{link.link}}" target="_blank" class="container-link-left text-hover">
-                <i class="fblink"></i> {{link.name}}
+                <span> {{link.name}} </span>
               </a>
+              <span class="no-select hide-on-med-and-down" style="color: transparent;">({{i}})</span>
             </div>
             <div class="container-link-left-padding"></div>
           </div>
