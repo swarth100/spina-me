@@ -94,6 +94,7 @@ $(document).ready(function() {
   };
 
   $("#about-arrow").click(scroll_about);
+  $("#about-arrow-mobile").click(scroll_about);
   $("#about-btn-side").click(scroll_about);
   $("#about-btn").click(scroll_about);
   $("#about-nav").click(scroll_about);

@@ -10,8 +10,9 @@
 }
 
 .icon-spacing {
-  padding-left: 10px;
-  padding-right: 10px;
+  position: relative;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .divider-blue {
@@ -24,6 +25,10 @@
 
 .email-padding-mobile {
   padding-top: 90vh;
+}
+
+.email-text {
+  padding-top: 60px;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */

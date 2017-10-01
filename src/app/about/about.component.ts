@@ -9,13 +9,7 @@ export class AboutComponent {
   title = 'About';
 
   /* */
-  story = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in suscipit sem. Duis et leo velit. Nullam' +
-    ' egestas et ipsum sed sagittis. Suspendisse lacus ipsum, mollis sed metus sed, finibus accumsan lectus. Vivamus' +
-    ' tristique, arcu in dignissim luctus, velit tellus varius tortor, vel semper urna tellus vitae sem. Nam vel' +
-    ' lectus velit. Aliquam id pulvinar mi, vel pharetra libero. Cras condimentum ipsum sed libero efficitur, et' +
-    ' laoreet libero consequat. Pellentesque sagittis, leo a fermentum euismod, mauris mi maximus quam, in tincidunt' +
-    ' leo orci in neque. Proin maximus eros sapien, vestibulum venenatis lacus tincidunt ut. Nunc posuere purus a' +
-    ' nibh posuere, at semper orci suscipit.';
+  story = "Hello there! I'm Alberto Spina and I'm currently studying Computer Science at Imperial College London. Even though much of my current work is University related, I've always loved to challenge myself with a number of side projects. Back in 2014 I worked with an Arduino Uno (and Python) making '#SEM2.0', a fully automated ElectroMagnetic Chessboard. I've since tried to explore other programming languages, working with Java, C, C++, Go and Javascript. You will find most of them on my GitHub/GitLab accounts, or listed below." ;
 
   /* */
   details = [

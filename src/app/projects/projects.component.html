@@ -1,7 +1,11 @@
-<div class="parallax-container parallax-container-div">
+<div class="parallax-container parallax-container-div hide-on-med-and-down">
   <div class="parallax" style="z-index: 1">
       <img src="../../assets/images/projects.jpg">
   </div>
+</div>
+
+<div class="hide-on-large-only half-img-container">
+  <img class="img-fit" src="../../assets/images/projects.jpg">
 </div>
 
 <div id="projects" class="block background-block section scrollspy">
@@ -30,9 +34,10 @@
               {{project.description}}
             </div>
             <div  *ngFor="let link of project.links; let i = index; trackBy: trackByIdx" >
-              <a href="{{link.link}}" target="_blank" class="container-link-left">
-                {{link.name}}
+              <a href="{{link.link}}" target="_blank" class="container-link-left text-hover">
+                <span> {{link.name}} </span>
               </a>
+              <span class="no-select hide-on-med-and-down" style="color: transparent;">({{i}})</span>
             </div>
             <div class="container-link-left-padding"></div>
           </div>
