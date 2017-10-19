@@ -19,7 +19,7 @@ export class AboutComponent {
     },
     {
       'title': 'Age:',
-      'content': '20 years old',
+      'content': '21 years old',
     },
     {
       'title': 'Current Employment:',
