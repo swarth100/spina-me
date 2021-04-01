@@ -46,7 +46,9 @@
         Story
       </div>
       <div class="container-text">
-        {{story}}
+        <div  *ngFor="let storyItem of story">
+          <p class="about-p">{{storyItem}}</p>
+        </div>
       </div>
     </div>
     <div class="col l4 s12">
