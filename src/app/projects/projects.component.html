@@ -1,49 +1,71 @@
 <div class="parallax-container parallax-container-div hide-on-med-and-down">
-  <div class="parallax" style="z-index: 1">
-      <img src="../../assets/images/projects.jpg">
-  </div>
+    <div class="parallax" style="z-index: 1">
+        <img src="../../assets/images/projects.jpg" />
+    </div>
 </div>
 
 <div class="hide-on-large-only half-img-container">
-  <img class="img-fit" src="../../assets/images/projects.jpg">
+    <img class="img-fit" src="../../assets/images/projects.jpg" />
 </div>
 
 <div id="projects" class="block background-block section scrollspy">
-  <nav class="pushpin-demo-nav pushpin-demo-nav-left" data-target="projects">
-    <div class="nav-wrapper dark-nav">
-      <div class="container">
-        <a href="#projects" id="projects-nav" class="brand-logo dark-text centre-align">{{title}}</a>
-      </div>
-    </div>
-  </nav>
-  <div class="row no-margin padding-nav">
-    <div class="col s10 offset-s1">
-      <div class="row no-margin">
-        <div  *ngFor="let project of projects">
-          <div class="col l6 s12">
-            <div class="container-text-title-left">
-              <div class="text-title-offset">
-                {{project.title}}
-              </div>
-              <div class="title-icon-box">
-                <i class="small material-icons">insert_invitations</i>
-                <div class="title-icon-box-text">{{getYear(project)}}</div>
-              </div>
+    <nav class="pushpin-demo-nav pushpin-demo-nav-left" data-target="projects">
+        <div class="nav-wrapper dark-nav">
+            <div class="container">
+                <a
+                    href="#projects"
+                    id="projects-nav"
+                    class="brand-logo dark-text centre-align"
+                    >{{ title }}</a
+                >
             </div>
-            <div class="container-text-left">
-              {{project.description}}
-            </div>
-            <div  *ngFor="let link of project.links; let i = index; trackBy: trackByIdx" >
-              <a href="{{link.link}}" target="_blank" class="container-link-left text-hover">
-                <span> {{link.name}} </span>
-              </a>
-              <span class="no-select hide-on-med-and-down" style="color: transparent;">({{i}})</span>
-            </div>
-            <div class="container-link-left-padding"></div>
-          </div>
         </div>
-      </div>
+    </nav>
+    <div class="row no-margin padding-nav">
+        <div class="col s10 offset-s1">
+            <div class="row no-margin">
+                <div *ngFor="let project of projects">
+                    <div class="col l6 s12">
+                        <div class="container-text-title-left">
+                            <div class="text-title-offset">
+                                {{ project.title }}
+                            </div>
+                            <div class="title-icon-box">
+                                <i class="small material-icons"
+                                    >insert_invitations</i
+                                >
+                                <div class="title-icon-box-text">
+                                    {{ getYear(project) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-text-left">
+                            {{ project.description }}
+                        </div>
+                        <div
+                            *ngFor="
+                                let link of project.links;
+                                let i = index;
+                                trackBy: trackByIdx
+                            "
+                        >
+                            <a
+                                href="{{ link.link }}"
+                                target="_blank"
+                                class="container-link-left text-hover"
+                            >
+                                <span> {{ link.name }} </span>
+                            </a>
+                            <span
+                                class="no-select hide-on-med-and-down"
+                                style="color: transparent"
+                                >({{ i }})</span
+                            >
+                        </div>
+                        <div class="container-link-left-padding"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
-
