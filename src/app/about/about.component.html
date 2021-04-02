@@ -1,77 +1,136 @@
 <div id="about" class="block background-block section scrollspy">
-  <nav class="pushpin-demo-nav pushpin-demo-nav-left" data-target="about">
-    <div class="nav-wrapper dark-nav">
-      <div class="container">
-        <a id="about-nav" href="#about" class="brand-logo dark-text centre-align">{{title}}</a>
-      </div>
-    </div>
-  </nav>
-  <nav class="overflow-hidden show-on-medium-and-down hide-on-large-only">
-    <nav id="menu-side-nav" class="pushpin-demo-nav pushpin-demo-nav-side z-depth-0" data-target="about">
-      <div class="nav-wrapper dark-nav">
-        <div class="container">
-          <a href="#" data-activates="slide-out" class="button-collapse side-nav-btn show-on-medium-and-down">
-            <i class="material-icons">menu</i>
-          </a>
+    <nav class="pushpin-demo-nav pushpin-demo-nav-left" data-target="about">
+        <div class="nav-wrapper dark-nav">
+            <div class="container">
+                <a
+                    id="about-nav"
+                    href="#about"
+                    class="brand-logo dark-text centre-align"
+                    >{{ title }}</a
+                >
+            </div>
         </div>
-      </div>
     </nav>
-  </nav>
-  <nav class="overflow-hidden hide-on-med-and-down">
-    <nav id="info-side-nav" class="pushpin-demo-nav pushpin-demo-nav-right z-depth-0" data-target="about">
-      <div class="nav-wrapper light-nav">
-        <div class="container">
-          <ul class="section table-of-contents">
-            <li class="no-padding"><a class="dark-text" id="about-btn" href="#about">About</a></li>
-            <li class="no-padding"><a class="dark-text" id="projects-btn" href="#projects">Projects</a></li>
-            <li class="no-padding"><a class="dark-text" id="contact-btn" href="#contact">Contact</a></li>
-            <li class="no-padding"><a class="dark-text" href="assets/files/resume.pdf">Resume</a></li>
-          </ul>
-        </div>
-      </div>
+    <nav class="overflow-hidden show-on-medium-and-down hide-on-large-only">
+        <nav
+            id="menu-side-nav"
+            class="pushpin-demo-nav pushpin-demo-nav-side z-depth-0"
+            data-target="about"
+        >
+            <div class="nav-wrapper dark-nav">
+                <div class="container">
+                    <a
+                        href="#"
+                        data-activates="slide-out"
+                        class="button-collapse side-nav-btn show-on-medium-and-down"
+                    >
+                        <i class="material-icons">menu</i>
+                    </a>
+                </div>
+            </div>
+        </nav>
     </nav>
-  </nav>
+    <nav class="overflow-hidden hide-on-med-and-down">
+        <nav
+            id="info-side-nav"
+            class="pushpin-demo-nav pushpin-demo-nav-right z-depth-0"
+            data-target="about"
+        >
+            <div class="nav-wrapper light-nav">
+                <div class="container">
+                    <ul class="section table-of-contents">
+                        <li class="no-padding">
+                            <a class="dark-text" id="about-btn" href="#about"
+                                >About</a
+                            >
+                        </li>
+                        <li class="no-padding">
+                            <a
+                                class="dark-text"
+                                id="projects-btn"
+                                href="#projects"
+                                >Projects</a
+                            >
+                        </li>
+                        <li class="no-padding">
+                            <a
+                                class="dark-text"
+                                id="contact-btn"
+                                href="#contact"
+                                >Contact</a
+                            >
+                        </li>
+                        <li class="no-padding">
+                            <a
+                                class="dark-text"
+                                href="assets/files/Alberto_Spina_resume.pdf"
+                                target="_blank"
+                                >Resume</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </nav>
 
-  <!-- SIDE NAV -->
-  <ul id="slide-out" class="side-nav section table-of-contents">
-    <li class="no-padding"><a class="dark-text-thin" id="about-btn-side" href="#about">About</a></li>
-    <li class="no-padding"><a class="dark-text-thin" id="projects-btn-side" href="#projects">Projects</a></li>
-    <li class="no-padding"><a class="dark-text-thin" id="contact-btn-side" href="#contact">Contact</a></li>
-    <li class="no-padding"><a class="dark-text-thin" href="assets/files/resume.pdf">Resume</a></li>
-  </ul>
+    <!-- SIDE NAV -->
+    <ul id="slide-out" class="side-nav section table-of-contents">
+        <li class="no-padding">
+            <a class="dark-text-thin" id="about-btn-side" href="#about"
+                >About</a
+            >
+        </li>
+        <li class="no-padding">
+            <a class="dark-text-thin" id="projects-btn-side" href="#projects"
+                >Projects</a
+            >
+        </li>
+        <li class="no-padding">
+            <a class="dark-text-thin" id="contact-btn-side" href="#contact"
+                >Contact</a
+            >
+        </li>
+        <li class="no-padding">
+            <a
+                class="dark-text-thin"
+                href="assets/files/Alberto_Spina_resume.pdf"
+                target="_blank"
+                >Resume</a
+            >
+        </li>
+    </ul>
 
-  <div class="row no-margin">
-    <div class="col l3 offset-l1 s10 offset-s1">
-      <div class="container-text-title">
-        Story
-      </div>
-      <div class="container-text">
-        <div  *ngFor="let storyItem of story">
-          <p class="about-p">{{storyItem}}</p>
+    <div class="row no-margin">
+        <div class="col l3 offset-l1 s10 offset-s1">
+            <div class="container-text-title">Story</div>
+            <div class="container-text">
+                <div *ngFor="let storyItem of story">
+                    <p class="about-p">{{ storyItem }}</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col l4 s12">
-      <div class="img-padding hide-on-med-and-down"></div>
-      <div class="box">
-        <div class="crop">
-          <img src="../../assets/images/about.jpg">
+        <div class="col l4 s12">
+            <div class="img-padding hide-on-med-and-down"></div>
+            <div class="box">
+                <div class="crop">
+                    <img src="../../assets/images/about.jpg" />
+                </div>
+            </div>
+            <div class="img-padding-small hide-on-med-and-down"></div>
         </div>
-      </div>
-      <div class="img-padding-small hide-on-med-and-down"></div>
-    </div>
-    <div class="col l3 offset-l0 s10 offset-s1">
-      <div class="container-text-title">
-        Details
-      </div>
-      <div class="container-text no-margin-important" *ngFor="let detail of details">
-        <div class="container-text-highlight">
-          {{detail.title}}
+        <div class="col l3 offset-l0 s10 offset-s1">
+            <div class="container-text-title">Details</div>
+            <div
+                class="container-text no-margin-important"
+                *ngFor="let detail of details"
+            >
+                <div class="container-text-highlight">
+                    {{ detail.title }}
+                </div>
+                {{ detail.content }}
+            </div>
+            <div class="container-text"></div>
         </div>
-        {{detail.content}}
-      </div>
-      <div class="container-text"></div>
     </div>
-  </div>
 </div>
-

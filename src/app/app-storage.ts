@@ -1,24 +1,23 @@
-import {Injectable} from '@angular/core';
-
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AppStorage {
-  hash: String = '';
-  username: String = '';
+    hash: String = '';
+    username: String = '';
 
-  saveHash(hash) {
-    this.hash = hash;
-  }
+    saveHash(hash) {
+        this.hash = hash;
+    }
 
-  saveUsername(user) {
-    this.username = user;
-  }
+    saveUsername(user) {
+        this.username = user;
+    }
 
-  getData() {
-    return this.username + '/' + this.hash;
-  }
+    getData() {
+        return this.username + '/' + this.hash;
+    }
 
-  hashNotNull() {
-    return this.hash !== '';
-  }
+    hashNotNull() {
+        return this.hash !== '';
+    }
 }
