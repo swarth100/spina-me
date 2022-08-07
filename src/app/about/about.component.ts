@@ -33,7 +33,7 @@ export class AboutComponent {
         },
         {
             title: 'Current Employment:',
-            content: 'Software Engineer, Two Sigma',
+            content: 'Software Engineer at Citadel, ex-Two Sigma',
         },
         {
             title: 'Education:',
