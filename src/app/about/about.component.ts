@@ -9,8 +9,8 @@ export class AboutComponent {
 
     /* */
     story = [
-        'Software Engineer at Two Sigma.',
-        'Before that G-Research intern in the Technology Innovation Group.',
+        'Software Engineer at Citadel.',
+        'Ex-Two Sigma Software Engineer (VENN & TSIQ).',
         "I'm an Imperial College graduate and passionate computer scientist. I have always loved to challenge myself with a number of side projects. It all started in 2014 I worked with an Arduino Uno (and Python) making '#SEM2.0', a fully automated ElectroMagnetic Chessboard. I have since explored other programming languages, working with Java, C, C++, Python, Javascript and Typescript. You can find my projects listed below and linked to my GitHub/GitLab accounts. ",
     ];
 
