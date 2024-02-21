@@ -29,4 +29,15 @@
   cursor: default;
 }
 
+// Ensure that each pair of columns (representing a project) stays aligned regardless of their content's length.
+.project-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.project-col {
+    display: flex;
+    flex-direction: column;
+}
+
+
 /* ------------------------------------------------------------------------------------------------------------------ */

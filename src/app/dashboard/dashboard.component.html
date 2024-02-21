@@ -58,7 +58,7 @@
                             [(ngModel)]="selectedPrj.links[i].name"
                             placeholder=""
                         />
-                        <label for="name{{ i }}" class="active">Name</label>
+                        <label for="name{{ i }}" class="active">Link Name</label>
                     </div>
                     <div class="input-field col s5">
                         <input
@@ -67,21 +67,47 @@
                             [(ngModel)]="selectedPrj.links[i].link"
                             placeholder=""
                         />
-                        <label for="link{{ i }}" class="active">Link</label>
+                        <label for="link{{ i }}" class="active">Link URL</label>
                     </div>
                     <div class="input-field col s2">
                         <a
-                            class="waves-effect waves-light btn btn-full-width"
+                            class="waves-effect waves-light btn"
                             (click)="removeLink(i)"
                         >
                             <i class="material-icons">remove</i>
                         </a>
+                        <a class="waves-effect waves-light btn" (click)="addLink()">
+                          <i class="material-icons">add</i>
+                        </a>
                     </div>
                 </div>
-                <div class="input-field col s12">
-                    <a class="waves-effect waves-light btn" (click)="addLink()">
-                        <i class="material-icons">add</i>
-                    </a>
+                <div
+                    *ngFor="
+                        let tag of selectedPrj.tags;
+                        let i = index;
+                        trackBy: trackByIdx
+                    "
+                >
+                    <div class="input-field col s10">
+                        <input
+                            id="name{{ i }}"
+                            type="text"
+                            [(ngModel)]="selectedPrj.tags[i]"
+                            placeholder=""
+                        />
+                        <label for="name{{ i }}" class="active">Tag Name</label>
+                    </div>
+                    <div class="input-field col s2">
+                        <a
+                            class="waves-effect waves-light btn"
+                            (click)="removeTag(i)"
+                        >
+                            <i class="material-icons">remove</i>
+                        </a>
+                        <a class="waves-effect waves-light btn" (click)="addTag()">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -56,6 +56,7 @@ export class DashboardComponent implements OnInit {
     public newPrj() {
         this.selectedPrj = {};
         this.selectedPrj.links = [this.newLinkObj()];
+        this.selectedPrj.tags = [''];
     }
 
     public addLink() {
@@ -64,6 +65,14 @@ export class DashboardComponent implements OnInit {
 
     public removeLink(index) {
         this.selectedPrj.links.splice(index, 1);
+    }
+
+    public addTag() {
+        this.selectedPrj.tags.push('');
+    }
+
+    public removeTag(index) {
+        this.selectedPrj.tags.splice(index, 1);
     }
 
     public updatePrj() {

@@ -54,6 +54,10 @@ let projectSchema = new Schema({
         type: Array,
         default: [],
     },
+    tags: {
+        type: Array,
+        default: [],
+    },
     date: {
         type: String,
         default: '01/01/1970',
