@@ -38,12 +38,7 @@ export class DashboardComponent implements OnInit {
 
                 /* Backwards compatibility! Add any missing fields (links/tags). */
                 for (const prj of this.projects) {
-                    if (!prj.links) {
-                        prj.links = [this.newLinkObj()];
-                    }
-                    if (!prj.tags) {
-                        prj.tags = [''];
-                    }
+                    prj.tags = [''];
                 }
 
             },
