@@ -18,7 +18,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     retrieveProjects() {
-        this.http.get('/api/projects').subscribe(
+        this.http.get('/api/projects/projects').subscribe(
             (data) => {
                 const retdata = JSON.parse(data.text());
                 // console.log(retdata);

@@ -50,12 +50,18 @@ router.post('/login', (req, res, next) => {
 });
 
 /* Routing to require access to projects */
-router.get('/projects', function(req, res) {
+router.get('/projects/:tag?', function(req, res) {
   console.log('[index.html] : GET request to /projects');
 
-  /* TODO: Use hash to perform a lookup check on users DB */
+  /* The tag is used as a filter on the records to vend the subset requested by the user */
+  const tag = req.params.tag;
 
-  mongooseProject.findMultiple({})
+  let filter = {};
+  if (undefined !== tag && tag !== 'all') {
+    filter = {'tags': tag};
+  }
+
+  mongooseProject.findMultiple(filter)
     .then(function(prjs) {
       for (let i = 0; i < prjs.length; i++) {
         // console.log(prjs[i]);
