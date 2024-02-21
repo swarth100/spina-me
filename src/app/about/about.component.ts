@@ -12,13 +12,13 @@ export class AboutComponent {
         'Software Engineer in Finance.',
         'Ex-Citadel Commodities.',
         'Ex-Two Sigma Software Engineer (VENN & TSIQ).',
-        "I'm an Imperial College graduate and passionate computer scientist. I have always loved to challenge myself with a number of side projects. It all started in 2014 I worked with an Arduino Uno (and Python) making '#SEM2.0', a fully automated ElectroMagnetic Chessboard. I have since explored other programming languages, working with Python, Java, C, C++, Javascript and Typescript. You can find my projects listed below and linked to my GitHub/GitLab accounts. ",
+        'As an Imperial College graduate with a flair for computer science and finance, I\'ve spearheaded impactful projects at Citadel and Two Sigma, blending technology with financial insights. My passion extends beyond the professional realm into mentoring, volunteering and teaching, leveraging my expertise in programming languages like Python, Java, and C++ to foster innovation. Discover my work and contributions on GitHub/GitLab, where each project showcases practical applications of my engineering skills.',
     ];
 
     /* Dynamically generate and update the displayed age */
     age() {
-        let birthdate = new Date('1996-09-22');
-        let timeDiff = Math.abs(Date.now() - birthdate.getTime());
+        const birthdate = new Date('1996-09-22');
+        const timeDiff = Math.abs(Date.now() - birthdate.getTime());
         return Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
     }
 

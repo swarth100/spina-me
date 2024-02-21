@@ -33,12 +33,18 @@
 .project-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    column-gap: 20px;
 }
 .project-col {
     display: flex;
     flex-direction: column;
     max-width: calc(50% - 20px);
+}
+// We make the item take the full width on smaller screens
+@media (max-width: 1000px) {
+    .project-col {
+        max-width: 100%; /* Make the item take the full width on smaller screens */
+    }
 }
 
 
