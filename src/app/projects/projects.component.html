@@ -24,46 +24,44 @@
     <div class="row no-margin padding-nav">
         <div class="col s10 offset-s1">
             <div class="row project-row no-margin">
-                <div *ngFor="let project of projects">
-                    <div class="col project-col l6 s12">
-                        <div class="container-text-title-left">
-                            <div class="text-title-offset">
-                                {{ project.title }}
-                            </div>
-                            <div class="title-icon-box">
-                                <i class="small material-icons"
-                                    >insert_invitations</i
-                                >
-                                <div class="title-icon-box-text">
-                                    {{ getYear(project) }}
-                                </div>
+                <div *ngFor="let project of projects" class="col project-col l6 s12">
+                    <div class="container-text-title-left">
+                        <div class="text-title-offset">
+                            {{ project.title }}
+                        </div>
+                        <div class="title-icon-box">
+                            <i class="small material-icons"
+                                >insert_invitations</i
+                            >
+                            <div class="title-icon-box-text">
+                                {{ getYear(project) }}
                             </div>
                         </div>
-                        <div class="container-text-left">
-                            {{ project.description }}
-                        </div>
-                        <div
-                            *ngFor="
-                                let link of project.links;
-                                let i = index;
-                                trackBy: trackByIdx
-                            "
-                        >
-                            <a
-                                href="{{ link.link }}"
-                                target="_blank"
-                                class="container-link-left text-hover"
-                            >
-                                <span> {{ link.name }} </span>
-                            </a>
-                            <span
-                                class="no-select hide-on-med-and-down"
-                                style="color: transparent"
-                                >({{ i }})</span
-                            >
-                        </div>
-                        <div class="container-link-left-padding"></div>
                     </div>
+                    <div class="container-text-left">
+                        {{ project.description }}
+                    </div>
+                    <div
+                        *ngFor="
+                            let link of project.links;
+                            let i = index;
+                            trackBy: trackByIdx
+                        "
+                    >
+                        <a
+                            href="{{ link.link }}"
+                            target="_blank"
+                            class="container-link-left text-hover"
+                        >
+                            <span> {{ link.name }} </span>
+                        </a>
+                        <span
+                            class="no-select hide-on-med-and-down"
+                            style="color: transparent"
+                            >({{ i }})</span
+                        >
+                    </div>
+                    <div class="container-link-left-padding"></div>
                 </div>
             </div>
         </div>

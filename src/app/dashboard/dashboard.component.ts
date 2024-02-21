@@ -35,6 +35,17 @@ export class DashboardComponent implements OnInit {
             (data) => {
                 const retdata = JSON.parse(data.text());
                 this.projects = retdata;
+
+                /* Backwards compatibility! Add any missing fields (links/tags). */
+                for (const prj of this.projects) {
+                    if (!prj.links) {
+                        prj.links = [this.newLinkObj()];
+                    }
+                    if (!prj.tags) {
+                        prj.tags = [''];
+                    }
+                }
+
             },
             (error) => {
                 /* Handle login error */
