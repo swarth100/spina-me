@@ -7,7 +7,7 @@ module.exports = {
     dev: {
       user: 'ubuntu',
       host: 'spina.me',
-      key: '~/Documents/AWS/spina.pem',
+      key: '~/Documents/COIM/spina.pem',
       ref: 'origin/dev',
       repo: 'git@github.com:swarth100/spina-me.git',
       path: '/home/ubuntu/spina-me',
