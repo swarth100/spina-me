@@ -4,20 +4,20 @@ import { Http } from '@angular/http';
 import * as $ from 'jquery';
 
 @Component({
-    selector: 'app-projects',
-    templateUrl: './projects.component.html',
+    selector: 'app-teaching',
+    templateUrl: './teaching.component.html',
 })
-export class ProjectsComponent implements OnInit {
+export class TeachingComponent implements OnInit {
     projects: any;
 
     constructor(private http: Http) {}
 
     ngOnInit() {
-        this.retrieveProjects();
+        this.retrieveTeachingProjects();
     }
 
-    retrieveProjects() {
-        this.http.get('/api/projects/projects').subscribe(
+    retrieveTeachingProjects() {
+        this.http.get('/api/projects/teaching').subscribe(
             (data) => {
                 const retdata = JSON.parse(data.text());
                 // console.log(retdata);

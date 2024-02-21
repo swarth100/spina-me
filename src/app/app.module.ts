@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ListDisplayComponent } from './list-display/list-display.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { TeachingComponent } from './teaching/teaching.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
@@ -22,11 +24,13 @@ import { AppStorage } from 'app/app-storage';
         AppComponent,
         HomeComponent,
         AboutComponent,
+        TeachingComponent,
         ProjectsComponent,
         ContactComponent,
         LoginComponent,
         ErrorComponent,
         DashboardComponent,
+        ListDisplayComponent,
     ],
     imports: [
         BrowserModule,
