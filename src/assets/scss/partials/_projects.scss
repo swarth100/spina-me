@@ -33,10 +33,12 @@
 .project-row {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
 }
 .project-col {
     display: flex;
     flex-direction: column;
+    max-width: calc(50% - 20px);
 }
 
 
