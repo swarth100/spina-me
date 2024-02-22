@@ -35,8 +35,11 @@
 
 <app-teaching></app-teaching>
 
-<app-projects></app-projects>
+<!--We add this scrollspy to allow publications to be in the navbar as-if they were projects-->
+<div id="projects-aggregate" class="scrollspy">
+  <app-projects></app-projects>
 
-<app-publications></app-publications>
+  <app-publications></app-publications>
+</div>
 
 <app-contact></app-contact>

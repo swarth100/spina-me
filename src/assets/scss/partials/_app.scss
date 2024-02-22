@@ -142,6 +142,12 @@ body {
     background-color: transparent;
 }
 
+// Add more room in navs to allow for crowding.
+// Otherwise nav elements overflow outside of nav.
+nav .container {
+  width: 90% !important;
+}
+
 .pushpin-demo-nav-left {
     position: absolute;
     left: 0;
